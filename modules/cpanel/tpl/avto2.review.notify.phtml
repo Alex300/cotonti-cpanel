@@ -1,0 +1,45 @@
+<?php
+/**
+ * module Avto for Cotonti Siena
+ * Уведомление администратоу о новом отзыве об автомобиле
+ *
+ * @package Avto
+ * @subpackage View
+ * @author Kalnov Alexey    <kalnovalexey@yandex.ru>
+ * @copyright (c) 2014 Portal30 Studio http://portal30.ru
+ */
+
+/** @var avto2_model_Review $review */
+$review = $this->review;
+
+?>
+<h3>Добрый день</h3>
+
+<p>Пользователь
+    <?php if(!empty($this->userUrl)) { ?>
+        <a href="<?=$this->userUrl?>"><b><?=$this->userName?></b></a>
+    <?php } else { ?>
+        <b><?=$this->userName?></b>
+    <?php } ?>
+    оставил <a href="<?=$this->reviewUrl?>">отзыв об автомобиле <b><?=htmlspecialchars($this->brandTitle)?> <?=htmlspecialchars($this->modelTitle)?>
+    <?=htmlspecialchars($review->modification)?></b></a>
+</p>
+
+<div>
+    <p><strong><?=htmlspecialchars($review->title)?></strong></p>
+    <p><?=nl2br(htmlspecialchars($review->text))?></p>
+</div>
+
+<?php if(!empty($review->pluses)){ ?>
+<div>
+    <p><strong>Достоинства автомобиля:</strong></p>
+    <p><?=nl2br(htmlspecialchars($review->pluses))?></p>
+</div>
+<?php }
+
+if(!empty($review->minuses)){ ?>
+<div>
+    <p><strong>Недостатки автомобиля:</strong></p>
+    <p><?=nl2br(htmlspecialchars($review->minuses))?></p>
+</div>
+<?php }
