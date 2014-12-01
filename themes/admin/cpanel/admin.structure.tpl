@@ -186,7 +186,6 @@
 <!-- END: DEFAULT -->
 
 <!-- BEGIN: NEWCAT -->
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addstructureModal">
     <span class="fa fa-plus"></span> {PHP.L.Add}
 </button>

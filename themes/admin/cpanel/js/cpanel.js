@@ -1,8 +1,4 @@
 /*
-Template Name: Color Admin Responsive Admin Template
-Author: Sean Ngu
-Author URL: http://www.sean-theme.com/pixel-admin/
-Version: 1.0
     ----------------------------
         APPS CONTENT TABLE
     ----------------------------
@@ -48,21 +44,6 @@ var handlePageContentView = function() {
       $.when($('#page-loader').addClass('hide')).done(function() {
         $('#page-container').addClass('in');
       });
-  });
-};
-
-
-/* 07. Handle Panel - Draggable
------------------------------------------------- */
-var handleDraggablePanel = function() {
-  "use strict";
-  var target = '[class*=col]';
-  var targetHandle = '.panel-heading';
-  var connectedTarget = '.row > [class*=col]';
-  
-  $(target).sortable({
-    handle: targetHandle,
-    connectWith: connectedTarget
   });
 };
 
@@ -257,5 +238,4 @@ $(function() {
     $('[data-toggle="popover"]').popover();
 
     handlePageContentView();
-    handleDraggablePanel();
 });

@@ -2,7 +2,8 @@
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=header.tags
-Tags=header.tpl:{ADMIN_MENU_TOP},{ADMIN_MENU_SIDE}
+Tags=header.tpl:{HEADER_MENU_TOP},{HEADER_MENU_SIDE},{HEADER_MENU_USER},{HEADER_NOTICES_COUNT},{HEADER_USER_AVATAR},{HEADER_USER_FULL_NAME}
+Order=50
 [END_COT_EXT]
 ==================== */
 /**

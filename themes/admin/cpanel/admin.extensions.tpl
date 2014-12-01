@@ -95,21 +95,21 @@
             </div>
             <div class="panel-body">
                 <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL} -->
-                <a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-info">
+                <a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-info marginbottom10">
                     <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
                 <!-- ENDIF -->
                 <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS} -->
-                <a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success">
+                <a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success marginbottom10">
                     <span class="fa fa-cogs"></span> {PHP.L.Administration}</a>
                 <!-- ENDIF -->
                 <!-- IF {ADMIN_EXTENSIONS_TOTALCONFIG} > 0 -->
-                <a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_CONFIG_URL}" class="btn btn-info ">
+                <a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_CONFIG_URL}" class="btn btn-info marginbottom10">
                     <span class="fa fa-wrench"></span> {PHP.L.Configuration} ({ADMIN_EXTENSIONS_TOTALCONFIG})</a>
                 <!-- ENDIF -->
-                <a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS}" class="btn btn-info">
+                <a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS}" class="btn btn-info marginbottom10">
                     <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
                 <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT} -->
-                <a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info">
+                <a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info marginbottom10">
                     <span class="fa fa-sitemap"></span> {PHP.L.Structure}</a>
                 <!-- ENDIF -->
             </div>
@@ -124,23 +124,23 @@
             </div>
             <div class="panel-body">
                 <!-- IF !{PHP.isinstalled} AND {PHP.dependencies_satisfied} -->
-                <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="ajax btn btn-success"
+                <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="ajax btn btn-success marginbottom10"
                     data-toggle="tooltip"><span class="fa fa-check"></span> {PHP.L.adm_opt_install}</a>
                 <!-- ENDIF -->
                 <!-- IF {PHP.isinstalled} -->
                     <!-- IF {PHP.exists} -->
-                    <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_UPDATE_URL}" class="ajax btn btn-success"
+                    <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_UPDATE_URL}" class="ajax btn btn-success marginbottom10"
                         data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.adm_opt_update}</a>
                     <!-- ENDIF -->
 
-                    <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="ajax btn btn-danger"
+                    <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="ajax btn btn-danger marginbottom10"
                        data-toggle="tooltip"><span class="fa fa-trash-o"></span> {PHP.L.adm_opt_uninstall}</a>
 
-                    <a title="{PHP.L.adm_opt_pauseall_explain}" href="{ADMIN_EXTENSIONS_PAUSE_URL}" class="ajax btn btn-warning"
+                    <a title="{PHP.L.adm_opt_pauseall_explain}" href="{ADMIN_EXTENSIONS_PAUSE_URL}" class="ajax btn btn-warning marginbottom10"
                        data-toggle="tooltip"><span class="fa fa-pause"></span> {PHP.L.adm_opt_pauseall}</a>
 
                     <!-- IF {PHP.exists} -->
-                    <a title="{PHP.L.adm_opt_unpauseall_explain}" href="{ADMIN_EXTENSIONS_UNPAUSE_URL}" class="ajax btn btn-info"
+                    <a title="{PHP.L.adm_opt_unpauseall_explain}" href="{ADMIN_EXTENSIONS_UNPAUSE_URL}" class="ajax btn btn-info marginbottom10"
                         data-toggle="tooltip"><span class="fa fa-play"></span> {PHP.L.adm_opt_unpauseall}</a>
                     <!-- ENDIF -->
                 <!-- ENDIF -->
@@ -325,23 +325,23 @@
 				<td class="centerall">{ADMIN_EXTENSIONS_STATUS}</td>
 				<td class="action">
                     <!-- IF {ADMIN_EXTENSIONS_TOTALCONFIG} -->
-					<a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_EDIT_URL}" class="btn btn-info btn-sm">
+					<a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_EDIT_URL}" class="btn btn-info btn-sm marginbottom10">
                         <span class="fa fa-wrench"></span> {PHP.L.short_config}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.ifstruct} -->
-					<a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info btn-sm">
+					<a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info btn-sm marginbottom10">
                         <span class="fa fa-sitemap"></span> {PHP.L.short_struct}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.totalinstalled} -->
-					<a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS_URL}" class="btn btn-info btn-sm">
+					<a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS_URL}" class="btn btn-info btn-sm marginbottom10">
                         <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.ifthistools} -->
-					<a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success btn-sm">
+					<a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success btn-sm marginbottom10">
                         <span class="fa fa-cogs"></span> {PHP.L.short_admin}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.if_plg_standalone} -->
-					<a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-success btn-sm">
+					<a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-success btn-sm marginbottom10">
                         <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
                     <!-- ENDIF -->
 				</td>

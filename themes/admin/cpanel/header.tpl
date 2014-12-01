@@ -20,10 +20,10 @@
     <link rel="shortcut icon" href="favicon.ico" />
     {HEADER_COMPOPUP}
 
-    <link href="lib/jquery-ui-1.11.2/jquery-ui.min.css" rel="stylesheet" />
-    <link href="lib/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="lib/bootstrap-3.3.0/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="lib/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--<link href="lib/jquery-ui/jquery-ui.min.css" rel="stylesheet" />-->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="themes/admin/cpanel/css/animate.css" rel="stylesheet" />
     <link href="themes/admin/cpanel/css/theme.css" rel="stylesheet" />
     <link href="themes/admin/cpanel/css/theme-responsive.css" rel="stylesheet" />

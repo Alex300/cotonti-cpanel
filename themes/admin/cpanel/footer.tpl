@@ -19,8 +19,8 @@
 </div><!-- /#page container -->
 {FOOTER_RC}
 <!-- ================== BEGIN BASE JS ================== -->
-<script src="lib/jquery-ui-1.11.2/jquery-ui.min.js"></script>
-<script src="lib/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<!--<script src="lib/jquery-ui-1.11.2/jquery-ui.min.js"></script>-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
 <script src="themes/admin/cpanel/js/crossbrowserjs/excanvas.min.js"></script>
 <script src="themes/admin/cpanel/js/crossbrowserjs/respond.min.js"></script>

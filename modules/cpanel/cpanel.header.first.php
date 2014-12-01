@@ -2,6 +2,7 @@
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=header.first
+Order=5
 [END_COT_EXT]
 ==================== */
 /**
