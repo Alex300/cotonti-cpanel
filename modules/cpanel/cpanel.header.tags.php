@@ -34,6 +34,12 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
         'icon_class' => 'fa fa-times-circle',
     );
 
+    if(!empty($out['notices_array'])){
+        foreach($out['notices_array'] as $key => $val){
+            if(empty($val)) unset($out['notices_array'][$key]);
+        }
+    }
+
     $t->assign(array (
         'HEADER_MENU_TOP'   => cot_renderMenu('admin.menu.top', $admin_MenuTop, 1),
         'HEADER_MENU_SIDE'  => cot_renderMenu('admin.menu.side', $admin_MenuSide, 1),

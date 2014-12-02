@@ -23,7 +23,7 @@ class cpanel_MainController{
             cot_error('home_installable_error');
         }
 
-        $adminsubtitle = ''; // Empty means just "Administration"
+        cot::$out['subtitle'] = cot::$L['Administration'];
 
         $t = new XTemplate($tpl);
 
@@ -93,7 +93,7 @@ class cpanel_MainController{
             'ADMIN_HOME_VERSION' => cot::$cfg['version'],
             'ADMIN_HOME_DB_VERSION' => htmlspecialchars(cot::$db->query("SELECT upd_value FROM $db_updates WHERE upd_param = 'revision'")->fetchColumn()),
 
-            'ADMIN_TITLE' => cot::$L['Main'].'fff',
+            'ADMIN_TITLE' => cot::$L['Main'],
         ));
 
         /* === Hook === */
@@ -138,6 +138,9 @@ class cpanel_MainController{
     }
 
     public function phpinfoAction(){
+
+        cot::$out['subtitle'] = 'php info - '.cot::$L['Administration'];
+
         ob_start();
         ob_implicit_flush(false);
         phpinfo();
