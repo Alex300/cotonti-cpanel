@@ -18,7 +18,7 @@ defined('COT_CODE') or die('Wrong URL');
 
 if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
 
-    $user_avatar = cot_rc('files_user_default_avatar');
+    $user_avatar = cot_rc('user_default_avatar');
     if(cot_module_active('files')){
         require_once cot_incfile('files', 'module');
         $user_avatar = cot_files_user_avatar($usr['profile']['user_avatar'], $usr['profile']['user_avatar']);

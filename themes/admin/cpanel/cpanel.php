@@ -24,6 +24,8 @@ $R['notices_link'] = '<a href="{$url}" title="{$title}">{$title}</a>';
 $R['notices_plain'] = '{$title}';
 $R['notices_notice'] = '<li class="media">{$notice}</li>';
 
+$R['user_default_avatar'] = '<img src="datas/defaultav/blank.png" alt="'.cot::$L['Avatar'].'" class="avatar" />';
+
 /**
  * Forms
  */
