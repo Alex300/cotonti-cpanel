@@ -175,13 +175,13 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
         'other' => array(
             'title' => $L['Other'],
             'icon_class' => 'fa fa-archive',
-            'active' => (in_array($m, array('other', 'cache', 'extrafields')) ),
+            'active' => (in_array($m, array('other', 'cache', 'extrafields')) && empty($p) ),
             'items' => array(
                 array(
                     'title' => $L['Other'],
                     'icon_class' => 'fa fa-archive',
                     'url' => cot_url('admin', array('m' => 'other')),
-                    'active' => ($m == 'other'),
+                    'active' => ($m == 'other' && empty($p)),
                 ),
                 array(
                     'title' => $L['adm_internalcache'],

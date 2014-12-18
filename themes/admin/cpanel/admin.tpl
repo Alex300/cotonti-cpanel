@@ -10,7 +10,9 @@
         <h1 class="page-header">{ADMIN_TITLE}<!-- IF {ADMIN_SUBTITLE}  --> <small>{ADMIN_SUBTITLE}</small><!-- ENDIF --></h1>
         <!-- ENDIF -->
 
-		<div id="main" class="body clear">
+        <div class="clearfix"></div>
+
+		<div id="main" class="body">
 			{ADMIN_MAIN}
 			<!-- IF {ADMIN_HELP} -->
             <div class="well margintop20">
