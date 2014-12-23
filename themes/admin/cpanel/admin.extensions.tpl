@@ -124,23 +124,23 @@
             </div>
             <div class="panel-body">
                 <!-- IF !{PHP.isinstalled} AND {PHP.dependencies_satisfied} -->
-                <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="ajax btn btn-success marginbottom10"
+                <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="btn btn-success marginbottom10"
                     data-toggle="tooltip"><span class="fa fa-check"></span> {PHP.L.adm_opt_install}</a>
                 <!-- ENDIF -->
                 <!-- IF {PHP.isinstalled} -->
                     <!-- IF {PHP.exists} -->
-                    <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_UPDATE_URL}" class="ajax btn btn-success marginbottom10"
+                    <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_UPDATE_URL}" class="btn btn-success marginbottom10"
                         data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.adm_opt_update}</a>
                     <!-- ENDIF -->
 
                     <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="ajax btn btn-danger marginbottom10"
                        data-toggle="tooltip"><span class="fa fa-trash-o"></span> {PHP.L.adm_opt_uninstall}</a>
 
-                    <a title="{PHP.L.adm_opt_pauseall_explain}" href="{ADMIN_EXTENSIONS_PAUSE_URL}" class="ajax btn btn-warning marginbottom10"
+                    <a title="{PHP.L.adm_opt_pauseall_explain}" href="{ADMIN_EXTENSIONS_PAUSE_URL}" class="btn btn-warning marginbottom10"
                        data-toggle="tooltip"><span class="fa fa-pause"></span> {PHP.L.adm_opt_pauseall}</a>
 
                     <!-- IF {PHP.exists} -->
-                    <a title="{PHP.L.adm_opt_unpauseall_explain}" href="{ADMIN_EXTENSIONS_UNPAUSE_URL}" class="ajax btn btn-info marginbottom10"
+                    <a title="{PHP.L.adm_opt_unpauseall_explain}" href="{ADMIN_EXTENSIONS_UNPAUSE_URL}" class="btn btn-info marginbottom10"
                         data-toggle="tooltip"><span class="fa fa-play"></span> {PHP.L.adm_opt_unpauseall}</a>
                     <!-- ENDIF -->
                 <!-- ENDIF -->
@@ -162,20 +162,26 @@
                             <th class="width5">#</th>
                             <th class="width15">{PHP.L.Part}</th>
                             <th class="width20">{PHP.L.File}</th>
-                            <th class="width20">{PHP.L.Hooks}</th>
+                            <th class="width15">{PHP.L.Hooks}</th>
                             <th class="width10">{PHP.L.Order}</th>
-                            <th class="width15">{PHP.L.Status}</th>
+                            <th class="width20">{PHP.L.Status}</th>
                             <th class="width15">{PHP.L.Action}</th>
                         </tr>
                     </thead>
                     <!-- BEGIN: ROW_ERROR_PART -->
-                    <tr>
-                        <td colspan="3">{ADMIN_EXTENSIONS_DETAILS_ROW_X}</td>
-                        <td colspan="4">{ADMIN_EXTENSIONS_DETAILS_ROW_ERROR}</td>
+                    <tr class="danger">
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
+                        <td class="text-danger">
+                            <!-- remove {ADMIN_EXTENSIONS_DETAILS_ROW_X} when siena 0.9.18 will be released -->
+                            {ADMIN_EXTENSIONS_DETAILS_ROW_X} {ADMIN_EXTENSIONS_DETAILS_ROW_FILE}
+                        </td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
+                        <td colspan="3">{ADMIN_EXTENSIONS_DETAILS_ROW_ERROR}</td>
                     </tr>
                     <!-- END: ROW_ERROR_PART -->
                     <!-- BEGIN: ROW_PART -->
-                    <tr>
+                    <tr class="<!-- IF {PHP.info_file.Status} == 0 -->info<!-- ENDIF --><!-- IF {PHP.info_file.Status} == 3 -->warning<!-- ENDIF -->">
                         <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
                         <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
                         <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_FILE}</td>
