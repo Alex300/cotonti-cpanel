@@ -20,7 +20,7 @@ defined('COT_CODE') or die('Wrong URL');
 if($cfg['admintheme'] == 'cpanel') {
     $inc_file1 = (empty($m)) ? 'home' : $m;
     $inc_file1 = (empty($s)) ? $inc_file1 : $inc_file1.'.'.$s;
-    if (in_array($inc_file1, $standard_admin))
+    if (in_array($inc_file1, $standard_admin) && empty($admintitle))
     {
         $admintitle = $adminsubtitle;
         $adminsubtitle = '';
