@@ -29,10 +29,10 @@ $R['user_default_avatar'] = '<img src="datas/defaultav/blank.png" alt="'.cot::$L
 /**
  * Forms
  */
-$R['input_select'] = '<select name="{$name}" class="form-control" {$attrs}>{$options}</select>{$error}';
-$R['input_submit'] = '<button type="submit" name="{$name}" class="form-control" {$attrs}>{$value}</button>';
-$R['input_text'] = '<input type="text" name="{$name}" value="{$value}" class="form-control" {$attrs} />{$error}';
-$R['input_textarea'] = '<textarea name="{$name}" rows="{$rows}" cols="{$cols}" class="form-control" {$attrs}>{$value}</textarea>{$error}';
+$R['input_select'] = '<select name="{$name}" {$attrs} class="form-control">{$options}</select>{$error}';
+$R['input_submit'] = '<button type="submit" name="{$name}" {$attrs} class="form-control" >{$value}</button>';
+$R['input_text'] = '<input type="text" name="{$name}" value="{$value}" {$attrs} class="form-control" />{$error}';
+$R['input_textarea'] = '<textarea name="{$name}" rows="{$rows}" cols="{$cols}" {$attrs} class="form-control">{$value}</textarea>{$error}';
 
 /**
  * Pagination
