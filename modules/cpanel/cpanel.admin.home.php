@@ -15,4 +15,4 @@ Hooks=admin.home
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
 // Redirect to cpanel module
-if($cfg['admintheme'] == 'cpanel') cot_redirect(cot_url('cpanel'));
+if(cot::$cfg['admintheme'] == 'cpanel' && basename($_SERVER['PHP_SELF']) == 'admin.php') cot_redirect(cot_url('cpanel'));

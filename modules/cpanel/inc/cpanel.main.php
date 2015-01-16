@@ -14,8 +14,8 @@ require_once cot_incfile('comments', 'plug');
 class cpanel_MainController{
 
     public function indexAction(){
-        global $db_plugins, $db_updates, $db, $cache, $db_stats, $db_users, $db_pages, $db_forum_topics, $db_forum_posts,
-               $db_pm, $L;
+        global $usr, $db_plugins, $db_updates, $db, $cache, $db_stats, $db_users, $db_groups_users, $db_pages, $db_forum_topics,
+               $db_forum_posts, $db_pm, $L, $sys, $cfg, $db_logger, $db_referers, $db_trash;
 
         $tpl = cot_tplfile(array('cpanel', 'admin', 'index'));
 
