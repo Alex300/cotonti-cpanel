@@ -10,14 +10,19 @@
             <table class="table table-hover table-condensed">
             <!-- BEGIN: ADMIN_HOME_ROW -->
                 <tr>
-                    <td class="width15">{ADMIN_HOME_DAY}</td>
+                    <td class="width10">{ADMIN_HOME_DAY}</td>
                     <td class="centerall width40">
-                        <div class="bar_back">
-                            <div class="bar_front" style="width:{ADMIN_HOME_PERCENTBAR}%;"></div>
+                        <div class="progress margin0">
+                            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                                 aria-valuenow="{ADMIN_HOME_PERCENTBAR}" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: {ADMIN_HOME_PERCENTBAR}%">
+                                <span class="sr-only">{ADMIN_HOME_PERCENTBAR}%</span>
+                            </div>
                         </div>
+
                     </td>
-                    <td class="width25">{PHP.L.Hits}: {ADMIN_HOME_HITS}</td>
-                    <td class="textcenter width20">{ADMIN_HOME_PERCENTBAR}%</td>
+                    <td class="width15">{PHP.L.Hits}: {ADMIN_HOME_HITS}</td>
+                    <td class="textcenter width10">{ADMIN_HOME_PERCENTBAR}%</td>
                 </tr>
             <!-- END: ADMIN_HOME_ROW -->
             </table>
