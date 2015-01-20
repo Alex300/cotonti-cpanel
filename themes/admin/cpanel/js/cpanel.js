@@ -215,7 +215,7 @@ $(function() {
     });
     /* ==== /Panel Control buttons ==== */
 
-    // иницаилизируем tooltip
+    /* ==== Tooltip ==== */
     $('body').tooltip({
         selector: '[data-toggle="tooltip"]',
         container: 'body',
@@ -228,14 +228,20 @@ $(function() {
             return false;
         }
     });
+    // Fix for tooltip
+    ajaxSuccessHandlers.push(function(msg){
+        $('div.tooltip').remove();
+    });
+    $('[data-toggle="popover"]').popover();
+    /* ==== /Tooltip ==== */
 
-    // Инициализируем
+    /* ==== Select2 ==== */
     if((typeof select2) != 'undefined') {
         $("select.select2").select2({
             placeholder: "Кликните для выбора"
         });
     }
-    $('[data-toggle="popover"]').popover();
+    /* ==== /Select2 ==== */
 
     handlePageContentView();
 });
