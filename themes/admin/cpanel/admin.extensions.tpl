@@ -133,7 +133,7 @@
                         data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.adm_opt_update}</a>
                     <!-- ENDIF -->
 
-                    <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="ajax btn btn-danger marginbottom10"
+                    <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="btn btn-danger marginbottom10"
                        data-toggle="tooltip"><span class="fa fa-trash-o"></span> {PHP.L.adm_opt_uninstall}</a>
 
                     <a title="{PHP.L.adm_opt_pauseall_explain}" href="{ADMIN_EXTENSIONS_PAUSE_URL}" class="btn btn-warning marginbottom10"
