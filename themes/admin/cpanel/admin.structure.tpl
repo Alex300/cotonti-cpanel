@@ -27,97 +27,116 @@
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <div class="">
-    <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn btn-default">{PHP.L.adm_extrafields}</a>
+    <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn btn-default"><span class="fa fa-list-alt"><span> {PHP.L.adm_extrafields}</a>
     <a href="{ADMIN_PAGE_STRUCTURE_RESYNCALL}" class="ajax btn btn-default" title="{PHP.L.adm_tpl_resyncalltitle}"
-            data-toggle="tooltip">{PHP.L.Resync}</a>
+            data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.Resync}</a>
     <!-- IF {ADMIN_STRUCTURE_I18N_URL} -->
-    <a href="{ADMIN_STRUCTURE_I18N_URL}" class="btn btn-default">{PHP.L.i18n_structure}</a>
+    <a href="{ADMIN_STRUCTURE_I18N_URL}" class="btn btn-default"><span class="fa fa-list-alt"><span class="fa fa-language"></span> {PHP.L.i18n_structure}</a>
     <!-- ENDIF -->
 </div>
 
 <!-- BEGIN: OPTIONS -->
-<div class="block">
-    <form name="savestructure" id="savestructure" action="{ADMIN_STRUCTURE_UPDATE_FORM_URL}" method="post" enctype="multipart/form-data">
-    <table class="cells">
-        <tr>
-            <td class="width20">{PHP.L.Path}:</td>
-            <td class="width80">{ADMIN_STRUCTURE_PATH}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.Code}:</td>
-            <td>{ADMIN_STRUCTURE_CODE}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.Title}:</td>
-            <td>{ADMIN_STRUCTURE_TITLE}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.Description}:</td>
-            <td>{ADMIN_STRUCTURE_DESC}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.Icon}:</td>
-            <td>{ADMIN_STRUCTURE_ICON}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.Locked}:</td>
-            <td>{ADMIN_STRUCTURE_LOCKED}</td>
-        </tr>
-        <tr>
-            <td>{PHP.L.adm_tpl_mode}:</td>
-            <td>
-                {ADMIN_STRUCTURE_TPLMODE} {ADMIN_STRUCTURE_SELECT}<br />
-                {PHP.L.adm_tpl_quickcat}: {ADMIN_STRUCTURE_TPLQUICK}
-            </td>
-        </tr>
-        <!-- BEGIN: EXTRAFLD -->
-        <tr>
-            <td>{ADMIN_STRUCTURE_EXTRAFLD_TITLE}:</td>
-            <td class="{ADMIN_STRUCTURE_ODDEVEN}">{ADMIN_STRUCTURE_EXTRAFLD}</td>
-        </tr>
-        <!-- END: EXTRAFLD -->
-    </table>
-        <!-- BEGIN: CONFIG -->
-        <h2>{PHP.L.Configuration}</h2>{CONFIG_HIDDEN}
-        {ADMIN_CONFIG_EDIT_CUSTOM}
+<div class="margintop20">
+    <form name="savestructure" id="savestructure" action="{ADMIN_STRUCTURE_UPDATE_FORM_URL}" method="post"
+          enctype="multipart/form-data" class="form-horizontal">
 
-        <table class="cells">
-            <tr>
-                <td class="coltop width35">{PHP.L.Parameter}</td>
-                <td class="coltop width60">{PHP.L.Value}</td>
-                <td class="coltop width5">{PHP.L.Reset}</td>
-            </tr>
-        <!-- BEGIN: ADMIN_CONFIG_ROW -->
-            <!-- BEGIN: ADMIN_CONFIG_FIELDSET_BEGIN -->
-            <tr>
-                <td class="group_begin" colspan="3">
-                    <h4>{ADMIN_CONFIG_FIELDSET_TITLE}</h4>
-                </td>
-            </tr>
-            <!-- END: ADMIN_CONFIG_FIELDSET_BEGIN -->
-            <!-- BEGIN: ADMIN_CONFIG_ROW_OPTION -->
-            <tr>
-                <td>{ADMIN_CONFIG_ROW_CONFIG_TITLE}:</td>
-                <td>
-                    {ADMIN_CONFIG_ROW_CONFIG}
-                    <div class="adminconfigmore">{ADMIN_CONFIG_ROW_CONFIG_MORE}</div>
-                </td>
-                <td class="centerall">
-                    <a href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}" class="ajax button">
-                        {PHP.L.Reset}
-                    </a>
-                </td>
-            </tr>
-            <!-- END: ADMIN_CONFIG_ROW_OPTION -->
-        <!-- END: ADMIN_CONFIG_ROW -->
-        </table>
+        <div class="row">
+            <div class="col-xs-12 col-md-7">
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">&nbsp;</div>
+                    <div class="panel-body">
+                        <div class="form-group {PHP|cot_formGroupClass('rstructurepath')}">
+                            <label class="col-sm-2 control-label">{PHP.L.Path}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_PATH}</div>
+                        </div>
 
-<!-- END: CONFIG -->
-    <table class="cells">
-        <tr>
-            <td class="valid" colspan="2"><input type="submit" class="submit" value="{PHP.L.Update}" /></td>
-        </tr>
-    </table>
+                        <div class="form-group {PHP|cot_formGroupClass('rstructurecode')}">
+                            <label class="col-sm-2 control-label">{PHP.L.Code}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_CODE}</div>
+                        </div>
+
+                        <div class="form-group {PHP|cot_formGroupClass('rstructuretitle')}">
+                            <label class="col-sm-2 control-label">{PHP.L.Title}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_TITLE}</div>
+                        </div>
+
+                        <div class="form-group {PHP|cot_formGroupClass('rstructuredesc')}">
+                            <label class="col-sm-2 control-label">{PHP.L.Description}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_DESC}</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">{PHP.L.Icon}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_ICON}</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">{PHP.L.Locked}:</label>
+                            <div class="col-sm-10"><div class="checkbox">{ADMIN_STRUCTURE_LOCKED}</div></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">{PHP.L.adm_tpl_mode}:</label>
+                            <div class="col-sm-10">
+                                {ADMIN_STRUCTURE_TPLMODE} {ADMIN_STRUCTURE_SELECT}<br />
+
+                                {PHP.L.adm_tpl_quickcat}: {ADMIN_STRUCTURE_TPLQUICK}
+                            </div>
+                        </div>
+
+                        <!-- BEGIN: EXTRAFLD -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">{ADMIN_STRUCTURE_EXTRAFLD_TITLE}:</label>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_EXTRAFLD}</div>
+                        </div>
+                        <!-- END: EXTRAFLD -->
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="fa fa-floppy-o"></span> {PHP.L.Update}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BEGIN: CONFIG -->
+            <div class="col-xs-12 col-md-5">
+                   <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">{PHP.L.Configuration}</h4>
+                    </div>
+                    <div class="panel-body">
+                        {CONFIG_HIDDEN}
+                        {ADMIN_CONFIG_EDIT_CUSTOM}
+
+                        <!-- BEGIN: ADMIN_CONFIG_ROW -->
+                        <!-- BEGIN: ADMIN_CONFIG_FIELDSET_BEGIN -->
+                        <h4>{ADMIN_CONFIG_FIELDSET_TITLE}</h4>
+                        <!-- END: ADMIN_CONFIG_FIELDSET_BEGIN -->
+
+                        <!-- BEGIN: ADMIN_CONFIG_ROW_OPTION -->
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">{ADMIN_CONFIG_ROW_CONFIG_TITLE}:</label>
+                            <div class="col-sm-5">
+                                {ADMIN_CONFIG_ROW_CONFIG}
+                                <!-- IF {ADMIN_CONFIG_ROW_CONFIG_MORE} -->
+                                <div class="adminconfigmore">{ADMIN_CONFIG_ROW_CONFIG_MORE}</div>
+                                <!-- ENDIF -->
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}" class="ajax button">{PHP.L.Reset}</a>
+                            </div>
+                        </div>
+                        <!-- END: ADMIN_CONFIG_ROW_OPTION -->
+                        <!-- END: ADMIN_CONFIG_ROW -->
+
+                        <button type="submit" class="btn btn-primary"><span class="fa fa-floppy-o"></span> {PHP.L.Update}</button>
+                    </div>
+                 </div>
+            </div>
+            <!-- END: CONFIG -->
+        </div>
     </form>
 </div>
 <!-- END: OPTIONS -->
