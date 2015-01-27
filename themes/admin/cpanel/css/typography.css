@@ -78,6 +78,8 @@ a:focus {
 
 .no-bg { background: none !important; }
 
+.word-break { word-break: break-all; word-wrap: break-word; }
+
 .margintop10	{ margin-top:10px; }
 .margintop20	{ margin-top:20px; }
 .marginright10	{ margin-right:10px; }

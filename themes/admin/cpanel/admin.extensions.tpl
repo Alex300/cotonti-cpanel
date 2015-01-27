@@ -171,21 +171,18 @@
                     <!-- BEGIN: ROW_ERROR_PART -->
                     <tr class="danger">
                         <td>{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
-                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
-                        <td class="text-danger">
-                            <!-- remove {ADMIN_EXTENSIONS_DETAILS_ROW_X} when siena 0.9.18 will be released -->
-                            {ADMIN_EXTENSIONS_DETAILS_ROW_X} {ADMIN_EXTENSIONS_DETAILS_ROW_FILE}
-                        </td>
-                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
+                        <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
+                        <td class="text-danger word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_FILE}</td>
+                        <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
                         <td colspan="3">{ADMIN_EXTENSIONS_DETAILS_ROW_ERROR}</td>
                     </tr>
                     <!-- END: ROW_ERROR_PART -->
                     <!-- BEGIN: ROW_PART -->
                     <tr class="<!-- IF {PHP.info_file.Status} == 0 -->info<!-- ENDIF --><!-- IF {PHP.info_file.Status} == 3 -->warning<!-- ENDIF -->">
                         <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
-                        <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
-                        <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_FILE}</td>
-                        <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
+                        <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
+                        <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_FILE}</td>
+                        <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
                         <td class="text-center">{ADMIN_EXTENSIONS_DETAILS_ROW_ORDER}</td>
                         <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_STATUS}</td>
                         <td class="">
