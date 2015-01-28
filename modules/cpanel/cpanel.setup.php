@@ -9,8 +9,9 @@ Date=2014-11-12
 Author=Kalnov Alexey    (kalnovalexey@yandex.ru)
 Copyright=(с) 2014 Portal30 Studio http://portal30.ru
 Auth_guests=
-Lock_guests=R12345A
+Lock_guests=RW12345A
 Auth_members=
+Lock_members=
 [END_COT_EXT]
 
 [BEGIN_COT_EXT_CONFIG]

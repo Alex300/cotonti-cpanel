@@ -22,3 +22,8 @@ function cot_formGroupClass($name){
 
     return '';
 }
+
+function cot_inc_var($name, $value) {
+    if(!isset($GLOBALS[$name])) $GLOBALS[$name] = 0;
+    $GLOBALS[$name] += $value;
+}
