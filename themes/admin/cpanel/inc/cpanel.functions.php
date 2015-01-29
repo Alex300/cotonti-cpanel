@@ -23,7 +23,23 @@ function cot_formGroupClass($name){
     return '';
 }
 
+/**
+ * Increment a global variable
+ * Template Callback
+ * @param string $name
+ * @param $value
+ */
 function cot_inc_var($name, $value) {
     if(!isset($GLOBALS[$name])) $GLOBALS[$name] = 0;
     $GLOBALS[$name] += $value;
+}
+
+/**
+ * Set a global variable
+ * Template Callback
+ * @param string $name
+ * @param $value
+ */
+function cot_set_var($name, $value) {
+    $GLOBALS[$name] = $value;
 }
