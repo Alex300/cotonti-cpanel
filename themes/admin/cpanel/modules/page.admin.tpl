@@ -134,7 +134,7 @@ $(document).ready(function()
 		<div class="text-right">
 			<nav>
 				<ul class="pagination" style="margin-bottom: 0">
-					{ADMIN_PAGE_PAGINATION_PREV}{ADMIN_PAGE_PAGNAV}{ADMIN_PAGE_PAGINATION_NEXT}<span></span>
+					{ADMIN_PAGE_PAGINATION_PREV}{ADMIN_PAGE_PAGNAV}{ADMIN_PAGE_PAGINATION_NEXT}
 				</ul>
 			</nav>
 			<span class="help-block">{PHP.L.Total}: {ADMIN_PAGE_TOTALITEMS}, {PHP.L.Onpage}: {ADMIN_PAGE_ON_PAGE}</span>
