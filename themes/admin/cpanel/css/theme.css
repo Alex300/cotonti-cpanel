@@ -590,6 +590,12 @@ body {
 }
 /* === /Footer === */
 
+/* === Tabels === */
+table td {vertical-align: top}
+table.table-flat 	{ border-collapse:collapse; width:100%; }
+table.table-flat td	{ padding:5px; border:0; }
+/* === /Tabels === */
+
 /* === Scroll to top === */
 .btn-scroll-to-top {
     position: fixed;
