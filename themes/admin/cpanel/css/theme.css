@@ -590,11 +590,24 @@ body {
 }
 /* === /Footer === */
 
-/* === Tabels === */
+/* === Tables === */
 table td {vertical-align: top}
 table.table-flat 	{ border-collapse:collapse; width:100%; }
 table.table-flat td	{ padding:5px; border:0; }
-/* === /Tabels === */
+/* === /Tables === */
+
+
+/* === Various === */
+.list-avatar {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+}
+.list-avatar img {
+    display: inline-block;
+    border-radius: 4px;
+}
+/* === /Various === */
 
 /* === Scroll to top === */
 .btn-scroll-to-top {

@@ -11,6 +11,10 @@
             <li><a href="{PHP|cot_url('admin','m=other')}">{PHP.L.Other}</a></li>
         </ul>
         <p>{PHP.out.copyright} {PHP.cfg.version}</p>
+        <p>
+            <a href="http://portal30.ru/sozdanie-internet-sajtov/free-scripts/cpanel" target="_blank">Admin theme cpanel</a>
+            {PHP.cot_modules.cpanel.version}
+        </p>
     </div>
 
     <a href="#" class="btn btn-icon btn-success btn-scroll-to-top fade" data-click="scroll-top">

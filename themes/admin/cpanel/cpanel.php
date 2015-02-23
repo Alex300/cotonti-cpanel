@@ -39,7 +39,7 @@ $R['input_textarea'] = '<textarea name="{$name}" rows="{$rows}" cols="{$cols}" {
  */
 $R['link_pagenav_current'] = '<li class="active"><a href="{$url}"{$event}{$rel}>{$num}<span class="sr-only">(current)</span></a></li>';
 $R['link_pagenav_main'] = '<li><a href="{$url}"{$event}{$rel}>{$num}</a></li>';
-$R['link_pagenav_gap'] = '<li class="disabled">...</li>';
+$R['link_pagenav_gap'] = '<li class="disabled"><span>...</span></li>';
 $R['link_pagenav_first'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_first'].'</span><span class="sr-only">First</span></a></li>';
 $R['link_pagenav_prev'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_prev'].'</span><span class="sr-only">Prev</span></a></li>';
 $R['link_pagenav_next'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_next'].'</span><span class="sr-only">Next</span></a></li>';

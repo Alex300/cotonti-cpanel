@@ -193,7 +193,7 @@
         <!-- IF {ADMIN_STRUCTURE_PAGNAV} -->
         <div class="text-right">
             <nav>
-                <ul class="pagination" style="margin-bottom: 0">
+                <ul class="pagination" style="margin: 0">
                     {ADMIN_STRUCTURE_PAGINATION_PREV}{ADMIN_STRUCTURE_PAGNAV}{ADMIN_STRUCTURE_PAGINATION_NEXT}
                 </ul>
             </nav>
