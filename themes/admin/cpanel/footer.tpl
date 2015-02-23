@@ -12,7 +12,7 @@
         </ul>
         <p>{PHP.out.copyright} {PHP.cfg.version}</p>
         <p>
-            <a href="http://portal30.ru/sozdanie-internet-sajtov/free-scripts/cpanel" target="_blank">Admin theme cpanel</a>
+            <a href="http://portal30.ru/sozdanie-internet-sajtov/free-scripts/cpanel" target="_blank">Admin theme «cPanel»</a>
             {PHP.cot_modules.cpanel.version}
         </p>
     </div>
