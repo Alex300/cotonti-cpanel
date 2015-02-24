@@ -1,7 +1,7 @@
 <!-- BEGIN: MAIN -->
 <div class="row">
 	<div class="col-xs-12 col-md-6">
-		<div class="panel panel-inverse margintop20">
+		<div class="panel panel-default margintop20">
 			<div class="panel-heading">
 				<h4 class="panel-title">{PHP.L.Core}</h4>
 			</div>
@@ -49,7 +49,7 @@
 
 	<!-- BEGIN: SECTION -->
 	<div class="col-xs-12 col-md-6">
-		<div class="panel panel-inverse margintop20">
+		<div class="panel panel-default margintop20">
 			<div class="panel-heading">
 				<h4 class="panel-title">{ADMIN_OTHER_SECTION}</h4>
 			</div>

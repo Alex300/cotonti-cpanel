@@ -1,5 +1,5 @@
 <!-- BEGIN: LIST -->
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.Modules}</h4>
     </div>
@@ -42,7 +42,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-md-7">
-                <div class="panel panel-inverse">
+                <div class="panel panel-default">
                     <div class="panel-heading">&nbsp;</div>
                     <div class="panel-body">
                         <div class="form-group {PHP|cot_formGroupClass('rstructurepath')}">
@@ -102,7 +102,7 @@
 
             <!-- BEGIN: CONFIG -->
             <div class="col-xs-12 col-md-5">
-                   <div class="panel panel-inverse">
+                   <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">{PHP.L.Configuration}</h4>
                     </div>
@@ -142,7 +142,7 @@
 <!-- END: OPTIONS -->
 
 <!-- BEGIN: DEFAULT -->
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.editdeleteentries}</h4>
     </div>

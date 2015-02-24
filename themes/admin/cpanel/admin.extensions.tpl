@@ -11,8 +11,8 @@
 </h2>
 
 <div class="row">
-    <div class="col-xs-12 col-lg-6">
-        <div class="panel panel-inverse margintop20">
+    <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default margintop20">
             <div class="panel-body">
                 <table class="table table-condensed">
                     <tr>
@@ -83,54 +83,51 @@
             </div>
         </div>
     </div>
-</div>
-
-
-<div class="row">
-    <!-- IF {PHP.isinstalled} AND {PHP.exists} -->
-    <div class="col-xs-12 col-md-6">
-        <div class="panel panel-inverse margintop20">
-            <div class="panel-heading">
-                <h4 class="panel-title">{PHP.L.Action}:</h4>
-            </div>
-            <div class="panel-body">
-                <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL} -->
-                <a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-info marginbottom10">
-                    <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
-                <!-- ENDIF -->
-                <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS} -->
-                <a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success marginbottom10">
-                    <span class="fa fa-cogs"></span> {PHP.L.Administration}</a>
-                <!-- ENDIF -->
-                <!-- IF {ADMIN_EXTENSIONS_TOTALCONFIG} > 0 -->
-                <a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_CONFIG_URL}" class="btn btn-info marginbottom10">
-                    <span class="fa fa-wrench"></span> {PHP.L.Configuration} ({ADMIN_EXTENSIONS_TOTALCONFIG})</a>
-                <!-- ENDIF -->
-                <a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS}" class="btn btn-info marginbottom10">
-                    <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
-                <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT} -->
-                <a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info marginbottom10">
-                    <span class="fa fa-sitemap"></span> {PHP.L.Structure}</a>
-                <!-- ENDIF -->
-            </div>
-        </div>
-    </div>
-    <!-- ENDIF -->
 
     <div class="col-xs-12 col-md-6">
-        <div class="panel panel-inverse margintop20">
-            <div class="panel-heading">
-                <h4 class="panel-title">{PHP.L.Options}:</h4>
+
+        <div class="row">
+            <!-- IF {PHP.isinstalled} AND {PHP.exists} -->
+            <div class="panel panel-default margintop20">
+                <div class="panel-heading">
+                    <h4 class="panel-title">{PHP.L.Action}:</h4>
+                </div>
+                <div class="panel-body">
+                    <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL} -->
+                    <a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-info marginbottom10">
+                        <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
+                    <!-- ENDIF -->
+                    <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS} -->
+                    <a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success marginbottom10">
+                        <span class="fa fa-cogs"></span> {PHP.L.Administration}</a>
+                    <!-- ENDIF -->
+                    <!-- IF {ADMIN_EXTENSIONS_TOTALCONFIG} > 0 -->
+                    <a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_CONFIG_URL}" class="btn btn-info marginbottom10">
+                        <span class="fa fa-wrench"></span> {PHP.L.Configuration} ({ADMIN_EXTENSIONS_TOTALCONFIG})</a>
+                    <!-- ENDIF -->
+                    <a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS}" class="btn btn-info marginbottom10">
+                        <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
+                    <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT} -->
+                    <a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info marginbottom10">
+                        <span class="fa fa-sitemap"></span> {PHP.L.Structure}</a>
+                    <!-- ENDIF -->
+                </div>
             </div>
-            <div class="panel-body">
-                <!-- IF !{PHP.isinstalled} AND {PHP.dependencies_satisfied} -->
-                <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="btn btn-success marginbottom10"
-                    data-toggle="tooltip"><span class="fa fa-check"></span> {PHP.L.adm_opt_install}</a>
-                <!-- ENDIF -->
-                <!-- IF {PHP.isinstalled} -->
+            <!-- ENDIF -->
+
+            <div class="panel panel-default margintop20">
+                <div class="panel-heading">
+                    <h4 class="panel-title">{PHP.L.Options}:</h4>
+                </div>
+                <div class="panel-body">
+                    <!-- IF !{PHP.isinstalled} AND {PHP.dependencies_satisfied} -->
+                    <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_INSTALL_URL}" class="btn btn-success marginbottom10"
+                       data-toggle="tooltip"><span class="fa fa-check"></span> {PHP.L.adm_opt_install}</a>
+                    <!-- ENDIF -->
+                    <!-- IF {PHP.isinstalled} -->
                     <!-- IF {PHP.exists} -->
                     <a title="{PHP.L.adm_opt_install_explain}" href="{ADMIN_EXTENSIONS_UPDATE_URL}" class="btn btn-success marginbottom10"
-                        data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.adm_opt_update}</a>
+                       data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.adm_opt_update}</a>
                     <!-- ENDIF -->
 
                     <a title="{PHP.L.adm_opt_uninstall_explain}" href="{ADMIN_EXTENSIONS_UNINSTALL_URL}" class="btn btn-danger marginbottom10"
@@ -141,17 +138,20 @@
 
                     <!-- IF {PHP.exists} -->
                     <a title="{PHP.L.adm_opt_unpauseall_explain}" href="{ADMIN_EXTENSIONS_UNPAUSE_URL}" class="btn btn-info marginbottom10"
-                        data-toggle="tooltip"><span class="fa fa-play"></span> {PHP.L.adm_opt_unpauseall}</a>
+                       data-toggle="tooltip"><span class="fa fa-play"></span> {PHP.L.adm_opt_unpauseall}</a>
                     <!-- ENDIF -->
-                <!-- ENDIF -->
+                    <!-- ENDIF -->
+                </div>
             </div>
+
         </div>
     </div>
 </div>
 
+
 <div class="row">
-    <div class="col-xs-12 col-md-8">
-        <div class="panel panel-inverse margintop20">
+    <div class="col-xs-12">
+        <div class="panel panel-default margintop20">
             <div class="panel-heading">
                 <h4 class="panel-title">{PHP.L.Parts}:</h4>
             </div>
@@ -160,11 +160,11 @@
                     <thead>
                         <tr>
                             <th class="width5">#</th>
-                            <th class="width15">{PHP.L.Part}</th>
+                            <th class="width20">{PHP.L.Part}</th>
                             <th class="width20">{PHP.L.File}</th>
                             <th class="width15">{PHP.L.Hooks}</th>
-                            <th class="width10">{PHP.L.Order}</th>
-                            <th class="width20">{PHP.L.Status}</th>
+                            <th class="width10 text-center">{PHP.L.Order}</th>
+                            <th class="width15">{PHP.L.Status}</th>
                             <th class="width15">{PHP.L.Action}</th>
                         </tr>
                     </thead>
@@ -205,8 +205,8 @@
         </div>
     </div>
 
-    <div class="col-xs-12 col-md-4">
-        <div class="panel panel-inverse margintop20">
+    <div class="col-xs-12">
+        <div class="panel panel-default margintop20">
             <div class="panel-heading">
                 <h4 class="panel-title">{PHP.L.Tags}:</h4>
             </div>
@@ -221,15 +221,15 @@
                     </thead>
                     <!-- BEGIN: ROW_ERROR_TAGS -->
                     <tr>
-                        <td class="centerall">{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
-                        <td class="centerall">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
-                        <td class="centerall">{PHP.L.None}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
+                        <td>{PHP.L.None}</td>
                     </tr>
                     <!-- END: ROW_ERROR_TAGS -->
                     <!-- BEGIN: ROW_TAGS -->
                     <tr>
-                        <td class="centerall">{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
-                        <td class="centerall">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
                         <td>{ADMIN_EXTENSIONS_DETAILS_ROW_LISTTAGS}</td>
                     </tr>
                     <!-- END: ROW_TAGS -->
@@ -272,7 +272,7 @@
 </div>
 
 <!-- BEGIN: SECTION-->
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{ADMIN_EXTENSIONS_SECTION_TITLE} ({ADMIN_EXTENSIONS_CNT_EXTP})</h4>
     </div>

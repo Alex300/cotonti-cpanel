@@ -2,7 +2,7 @@
 
 <!-- BEGIN: STAT -->
 <div class="col-xs-12 col-sm-6">
-    <div class="panel panel-inverse margintop20">
+    <div class="panel panel-default margintop20">
         <div class="panel-heading">
             <h4 class="panel-title">{PHP.L.hits_hits}:</h4>
         </div>
@@ -34,7 +34,7 @@
 
 <!-- BEGIN: ACTIVITY -->
 <div class="col-xs-12 col-sm-6">
-    <div class="panel panel-inverse margintop20">
+    <div class="panel panel-default margintop20">
         <div class="panel-heading">
             <h4 class="panel-title">{PHP.L.hits_activity}:</h4>
         </div>

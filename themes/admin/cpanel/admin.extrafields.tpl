@@ -2,7 +2,7 @@
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <!-- BEGIN: TABLELIST -->
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-body">
         <table class="table table-hover">
             <!-- BEGIN: ROW -->
@@ -120,7 +120,7 @@
 //]]>
 </script>
 <!-- BEGIN: TABLE -->
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.adm_extrafields}</h4>
     </div>
@@ -223,7 +223,7 @@
     </div>
 </div>
 
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.adm_extrafield_new}</h4>
     </div>

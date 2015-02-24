@@ -15,7 +15,7 @@
 	<!-- ENDIF -->
 
 	<!-- BEGIN: RIGHTS_SECTION -->
-	<div class="panel panel-inverse">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h4 class="panel-title">{RIGHTS_SECTION_TITLE}:</h4>
 		</div>

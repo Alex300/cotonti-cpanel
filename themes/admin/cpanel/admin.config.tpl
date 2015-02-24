@@ -2,7 +2,7 @@
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <!-- BEGIN: EDIT -->
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">{ADMIN_CONFIG_EDIT_TITLE}</h4>
     </div>
@@ -56,7 +56,7 @@
 
 <!-- BEGIN: DEFAULT -->
 <!-- BEGIN: ADMIN_CONFIG_COL -->
-<div class="panel panel-inverse">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">{ADMIN_CONFIG_COL_CAPTION}</h4>
     </div>

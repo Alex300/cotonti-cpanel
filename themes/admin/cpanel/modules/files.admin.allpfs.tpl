@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <div class="panel panel-inverse margintop20">
+        <div class="panel panel-default margintop20">
             <div class="panel-heading">
                 <h4 class="panel-title"></h4>
             </div>

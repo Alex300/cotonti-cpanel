@@ -4,7 +4,7 @@
  * @package Cotonti
  * @subpackage  Admin
  * @author Alex - Studio Portal30
- * @copyright Portal30 2014 http://portal30.ru
+ * @copyright Portal30 http://portal30.ru
  */
 body {
     padding-top: 54px;
@@ -609,16 +609,16 @@ table.table-flat td	{ padding:5px; border:0; }
 }
 /* === /Various === */
 
-/* === Scroll to top === */
+/* ==== Scroll to top ==== */
 .btn-scroll-to-top {
     position: fixed;
     bottom: 20px;
     right: 25px;
 }
-/* === /Scroll to top === */
+/* ==== /Scroll to top ==== */
 
 
-/* === Bootstrap === */
+/* ==== Bootstrap ==== */
 
 /* Button */
 .btn {
@@ -984,9 +984,10 @@ table.table-flat td	{ padding:5px; border:0; }
     -moz-border-radius: 0 0 3px 3px;
     border-radius: 0 0 3px 3px;
 }
-.panel-default > .panel-heading {
-    background: #fafafa;
-}
+/*.panel-default > .panel-heading {*/
+    /*background: #fafafa;*/
+/*}*/
+.panel-default > .panel-heading,
 .panel-inverse > .panel-heading,
 .panel-success > .panel-heading,
 .panel-warning > .panel-heading,
@@ -995,7 +996,7 @@ table.table-flat td	{ padding:5px; border:0; }
 .panel-info > .panel-heading {
     color: #fff;
 }
-.panel-inverse > .panel-heading { background: #242a30; }
+.panel-default > .panel-heading, .panel-inverse > .panel-heading { background: #242a30; }
 .panel-success > .panel-heading { background: #008a8a; }
 .panel-warning > .panel-heading { background: #c47d15; }
 .panel-danger > .panel-heading { background: #cc4946; }
@@ -1086,6 +1087,72 @@ table.table-flat td	{ padding:5px; border:0; }
 /* /Panel loading */
 /* /Panel */
 
+
+/* Pagination */
+.pager li > a,
+.pager li > span,
+.pagination > li > a {
+    border-color: #e2e7eb;
+    color: #242a30;
+}
+.pager.pager-without-border li > a,
+.pager.pager-without-border li > span,
+.pagination.pagination-without-border > li > a {
+    border-color: #fff;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus,
+.pager > .disabled > span,
+.pager > .disabled > a {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    border-color: #ddd;
+}
+.pagination > li > a {
+    color: #242a30;
+    margin-left: 5px;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+}
+.pagination > li:first-child > a {
+    margin-left: 0;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    font-size: 10px;
+    margin-left: 4px;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+    font-size: 14px;
+    margin-left: 6px;
+}
+.pager li > a:hover,
+.pager li > a:focus,
+.pager li > span:hover,
+.pager li > span:focus,
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+    color: #242a30;
+    background: #e2e7eb;
+    border-color: #d8dde1;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background: #242a30 !important;
+    border-color: #242a30 !important;
+}
+/* /Pagination */
+
 /* Alerts */
 .alert {
     border: none;
@@ -1106,9 +1173,9 @@ table.table-flat td	{ padding:5px; border:0; }
 .tooltip-inner {
     max-width: 400px;
 }
-/* === /Bootstrap === */
+/* ==== /Bootstrap ==== */
 
-/* === Miscellaneous === */
+/* ==== Miscellaneous ==== */
 .animated {
     -webkit-animation-duration: .6s;
     animation-duration: .6s;

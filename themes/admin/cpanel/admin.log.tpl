@@ -8,7 +8,7 @@
 </div>
 <!-- ENDIF -->
 
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.Log} ({ADMIN_LOG_TOTALDBLOG})</h4>
     </div>

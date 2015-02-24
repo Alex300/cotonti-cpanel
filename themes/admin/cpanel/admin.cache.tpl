@@ -8,7 +8,7 @@
 </div>
 
 <!-- BEGIN: ADMIN_CACHE_MEMORY -->
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{ADMIN_CACHE_MEMORY_DRIVER}</h4>
     </div>
@@ -26,7 +26,7 @@
 </div>
 <!-- END: ADMIN_CACHE_MEMORY -->
 
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.Database}</h4>
     </div>

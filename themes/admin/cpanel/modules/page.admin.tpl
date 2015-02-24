@@ -24,7 +24,7 @@ $(document).ready(function()
 
 {FILE "{PHP.cfg.themes_dir}/{PHP.theme}/warnings.tpl"}
 
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
 	<div class="panel-heading">
 		<h4 class="panel-title">{PHP.L.Pages} ({ADMIN_PAGE_TOTALDBPAGES})</h4>
 	</div>

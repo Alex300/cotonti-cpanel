@@ -7,7 +7,7 @@
 </div>
 
 <!-- BEGIN: ADMIN_USERS_DEFAULT -->
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.Groups}:</h4>
     </div>
@@ -58,7 +58,7 @@
     <span class="fa fa-plus"></span> {PHP.L.Add}
 </button>
 
-<div id="addGroupDlg" class="panel panel-inverse margintop20" style="display: none">
+<div id="addGroupDlg" class="panel panel-default margintop20" style="display: none">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.Add}:</h4>
     </div>
@@ -176,7 +176,7 @@
 <!-- END: ADMIN_USERS_DEFAULT -->
 
 <!-- BEGIN: ADMIN_USERS_EDIT -->
-<div class="panel panel-inverse margintop20">
+<div class="panel panel-default margintop20">
     {PHP|cot_set_var('labelClass', 'col-md-3')}
     {PHP|cot_set_var('elementClass', 'col-md-9')}
     <div class="panel-heading">

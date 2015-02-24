@@ -1,7 +1,7 @@
 <!-- BEGIN: MAIN -->
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
-<div class="panel panel-inverse">
+<div class="panel panel-default">
 	<div class="panel-heading">
 		<h4 class="panel-title">{PHP.L.Rights}</h4>
 	</div>
