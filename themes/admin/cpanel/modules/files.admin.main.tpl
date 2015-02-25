@@ -1,6 +1,6 @@
 <!-- BEGIN: MAIN -->
 <!-- IF {PAGE_TITLE} -->
-<h2 class="tags"><img src="{PHP.cfg.modules_dir}/files/files.png" style="vertical-align: middle;" /> {PAGE_TITLE}</h2>
+<h2 class="tags margintop10"><img src="{PHP.cfg.modules_dir}/files/files.png" style="vertical-align: middle;" /> {PAGE_TITLE}</h2>
 <!-- ENDIF -->
 
 <div class="clearfix"></div>
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="textcenter margintop10">
+<div class="text-center margintop10">
     <em>{PHP.L.Version}:</em> <strong>{PHP.cot_modules.files.version}</strong>.
 </div>
 

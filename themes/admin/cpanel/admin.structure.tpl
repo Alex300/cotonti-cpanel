@@ -148,7 +148,7 @@
     </div>
     <div class="panel-body">
         <form name="savestructure" id="savestructure" action="{ADMIN_STRUCTURE_UPDATE_FORM_URL}" method="post" class="ajax" enctype="multipart/form-data" >
-        <table class="table table-striped">
+        <table class="table table-striped margin0">
             <thead>
                 <tr>
                     <th class="coltop width10">{PHP.L.Path}</th>

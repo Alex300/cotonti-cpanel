@@ -10,8 +10,9 @@
             <li><a href="{PHP|cot_url('admin','m=users')}">{PHP.L.Users}</a></li>
             <li><a href="{PHP|cot_url('admin','m=other')}">{PHP.L.Other}</a></li>
         </ul>
-        <p>{PHP.out.copyright} {PHP.cfg.version}</p>
         <p>
+            {PHP.out.copyright} {PHP.cfg.version}
+            &nbsp; | &nbsp;
             <a href="http://portal30.ru/sozdanie-internet-sajtov/free-scripts/cpanel" target="_blank">Admin theme «cPanel»</a>
             {PHP.cot_modules.cpanel.version}
         </p>

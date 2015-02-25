@@ -1,12 +1,11 @@
 <!-- BEGIN: MAIN -->
-{FILE "{PHP.cfg.system_dir}/admin/tpl/warnings.tpl"}
-
 <!-- IF {PHP.usr.isadmin} -->
-<div>
+<div class="button-toolbar">
     <a title="{PHP.L.adm_purgeall}" href="{ADMIN_LOG_URL_PRUNE}" class="ajax btn btn-danger"><span class="fa fa-trash-o"></span>
         {PHP.L.adm_purgeall}</a>
 </div>
 <!-- ENDIF -->
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <div class="panel panel-default margintop20">
     <div class="panel-heading">

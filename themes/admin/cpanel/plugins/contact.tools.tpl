@@ -1,4 +1,5 @@
 <!-- BEGIN: MAIN -->
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 <div class="row">
 	<div class="col-xs-12">
 		<div class="panel panel-default">
@@ -6,8 +7,6 @@
 				<h4 class="panel-title">{PHP.L.Messages}</h4>
 			</div>
 			<div class="panel-body">
-				{FILE "{PHP.cfg.themes_dir}/{PHP.usr.theme}/warnings.tpl"}
-
 				<table class="table table-hover">
 					<thead>
 						<tr>

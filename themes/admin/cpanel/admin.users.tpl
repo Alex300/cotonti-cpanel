@@ -1,10 +1,9 @@
 <!-- BEGIN: MAIN -->
-{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
-
-<div class="">
+<div class="button-toolbar">
     <a title="{PHP.L.Configuration}" href="{ADMIN_USERS_URL}" class="btn btn-default">{PHP.L.Configuration}</a>
     <a href="{ADMIN_USERS_EXTRAFIELDS_URL}" class="btn btn-default">{PHP.L.adm_extrafields}</a>
 </div>
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <!-- BEGIN: ADMIN_USERS_DEFAULT -->
 <div class="panel panel-default margintop20">

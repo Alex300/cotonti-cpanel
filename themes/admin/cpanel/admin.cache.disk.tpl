@@ -1,10 +1,9 @@
 <!-- BEGIN: MAIN -->
-{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
-
-<div class="block  button-toolbar">
-        <a href="{ADMIN_DISKCACHE_URL_REFRESH}" class="ajax btn btn-info"><span class="fa fa-refresh"></span> {PHP.L.Refresh}</a>
-        <a href="{ADMIN_DISKCACHE_URL_PURGE}" class="ajax btn btn-danger"><span class="fa fa-times-circle"></span> {PHP.L.adm_purgeall}</a>
+<div class="button-toolbar">
+    <a href="{ADMIN_DISKCACHE_URL_REFRESH}" class="ajax btn btn-info"><span class="fa fa-refresh"></span> {PHP.L.Refresh}</a>
+    <a href="{ADMIN_DISKCACHE_URL_PURGE}" class="ajax btn btn-danger"><span class="fa fa-times-circle"></span> {PHP.L.adm_purgeall}</a>
 </div>
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <div class="row">
     <div class="col-xs-12 col-lg-6">

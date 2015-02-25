@@ -1,12 +1,11 @@
 <!-- BEGIN: MAIN -->
-{FILE "{PHP.cfg.themes_dir}/{PHP.usr.theme}/warnings.tpl"}
-
 <!-- IF {PHP.usr.isadmin} -->
-<div class="block button-toolbar">
+<div class="button-toolbar">
     <a href="{ADMIN_REFERERS_URL_PRUNE}" class="btn btn-danger"><span class="fa fa-trash-o"></span> {PHP.L.adm_purgeall}</a>
     <a href="{ADMIN_REFERERS_URL_PRUNELOWHITS}" class="btn btn-warning">{PHP.L.adm_ref_prunelowhits}</a>
 </div>
 <!-- ENDIF -->
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <div class="panel panel-default margintop20">
     <div class="panel-heading">

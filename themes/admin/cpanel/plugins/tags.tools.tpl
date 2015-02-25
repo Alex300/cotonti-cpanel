@@ -10,13 +10,11 @@
         });
     });
 </script>
-
-{FILE "{PHP.cfg.themes_dir}/{PHP.cfg.defaulttheme}/warnings.tpl"}
-
-<div>
+<div class="button-toolbar">
     <a title="{PHP.L.Configuration}" href="{ADMIN_TAGS_CONFIG_URL}" class="btn btn-default"><span class="fa fa-wrench"></span>
         {PHP.L.Configuration}</a>
 </div>
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <form name="sortfiltertag" action="{ADMIN_TAGS_FORM_ACTION}" method="post" class="form-inline margintop20">
     <!-- IF {ADMIN_TAGS_TOTALITEMS} > 1 -->

@@ -1148,7 +1148,7 @@ table.table-flat td	{ padding:5px; border:0; }
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-    background: #242a30 !important;
+    background: #2d353c !important;
     border-color: #242a30 !important;
 }
 /* /Pagination */
@@ -1156,6 +1156,7 @@ table.table-flat td	{ padding:5px; border:0; }
 /* Alerts */
 .alert {
     border: none;
+    margin: 20px 0 10px 0;
 }
 .alert.alert-success {
     background: #7cdda7;

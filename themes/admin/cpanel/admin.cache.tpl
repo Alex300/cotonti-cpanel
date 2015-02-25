@@ -1,11 +1,10 @@
 <!-- BEGIN: MAIN -->
-{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
-
-<div>
+<div class="button-toolbar">
     <a href="{ADMIN_CACHE_URL_REFRESH}" class="ajax btn btn-info"><span class="fa fa-refresh"></span> {PHP.L.Refresh}</a>
     <a href="{ADMIN_CACHE_URL_PURGE}" class="ajax btn btn-danger"><span class="fa fa-times-circle"></span> {PHP.L.adm_purgeall}</a>
     <a href="{ADMIN_CACHE_URL_SHOWALL}" class="ajax btn btn-primary"><span class="fa fa-folder-open"></span> {PHP.L.adm_cache_showall}</a>
 </div>
+{FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <!-- BEGIN: ADMIN_CACHE_MEMORY -->
 <div class="panel panel-default margintop20">

@@ -10,10 +10,9 @@ $(document).ready(function()
 	});
 });
 </script>
-
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
-<div class="">
+<div class="button-toolbar">
 	<a href="{ADMIN_PAGE_URL_CONFIG}" class="btn btn-default" title="{PHP.L.Configuration}"
 	   data-toggle="tooltip"><span class="fa fa-wrench"></span> {PHP.L.Configuration}</a>
 	<a href="{ADMIN_PAGE_URL_EXTRAFIELDS}" class="btn btn-default" title="{PHP.L.adm_extrafields_desc}"
@@ -21,8 +20,6 @@ $(document).ready(function()
 	<a href="{ADMIN_PAGE_URL_STRUCTURE}" class="btn btn-default"><span class="fa fa-sitemap"></span> {PHP.L.Categories}</a>
 	<a href="{ADMIN_PAGE_URL_ADD}" class="btn btn-default btn-primary"><span class="fa fa-plus"></span> {PHP.L.page_addtitle}</a>
 </div>
-
-{FILE "{PHP.cfg.themes_dir}/{PHP.theme}/warnings.tpl"}
 
 <div class="panel panel-default margintop20">
 	<div class="panel-heading">
