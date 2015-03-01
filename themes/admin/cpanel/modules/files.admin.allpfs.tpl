@@ -28,7 +28,7 @@
                     <thead>
                         <tr>
                             <th class="width60">{PHP.L.User}</th>
-                            <th class="text-center" class="width20">{PHP.L.Files}</th>
+                            <th class="text-center">{PHP.L.Files}</th>
                             <th class="width20">{PHP.L.Open}</th>
                         </tr>
                     </thead>
