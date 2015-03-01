@@ -47,7 +47,15 @@
 					</tbody>
 				</table>
 
-				<div class="text-right"><ul class="pagination">{CONTACT_PREV}{CONTACT_PAGINATION}{CONTACT_NEXT}</ul></div>
+                <!-- IF {CONTACT_PAGINATION} -->
+                <div class="text-right">
+                    <nav>
+                        <ul class="pagination" style="margin: 0">
+                            {CONTACT_PREV}{CONTACT_PAGINATION}{CONTACT_NEXT}
+                        </ul>
+                    </nav>
+                </div>
+                <!-- ENDIF -->
 			</div>
 		</div>
 

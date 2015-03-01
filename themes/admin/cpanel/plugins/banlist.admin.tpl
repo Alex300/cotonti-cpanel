@@ -32,7 +32,17 @@
             </tr>
             <!-- END: ADMIN_BANLIST_ROW -->
         </table>
-        <p class="paging">{ADMIN_BANLIST_PAGINATION_PREV}{ADMIN_BANLIST_PAGNAV}{ADMIN_BANLIST_PAGINATION_NEXT}<span>{PHP.L.Total}: {ADMIN_BANLIST_TOTALITEMS}, {PHP.L.Onpage}: {ADMIN_BANLIST_COUNTER_ROW}</span></p>
+
+        <!-- IF {ADMIN_BANLIST_PAGNAV} -->
+        <div class="text-right">
+            <nav>
+                <ul class="pagination" style="margin: 0">
+                    {ADMIN_BANLIST_PAGINATION_PREV}{ADMIN_BANLIST_PAGNAV}{ADMIN_BANLIST_PAGINATION_NEXT}
+                </ul>
+            </nav>
+            <span class="help-block">{PHP.L.Total}: {ADMIN_BANLIST_TOTALITEMS}, {PHP.L.Onpage}: {ADMIN_BANLIST_COUNTER_ROW}</span>
+        </div>
+        <!-- ENDIF -->
         <!-- ELSE -->
         <h4 class="text-muted text-center">{PHP.L.None}</h4>
         <!-- ENDIF -->

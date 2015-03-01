@@ -26,7 +26,7 @@
 <!-- BEGIN: MAIN -->
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
-<div class="">
+<div class="button-toolbar">
     <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn btn-default"><span class="fa fa-list-alt"></span> {PHP.L.adm_extrafields}</a>
     <a href="{ADMIN_PAGE_STRUCTURE_RESYNCALL}" class="ajax btn btn-default" title="{PHP.L.adm_tpl_resyncalltitle}"
             data-toggle="tooltip"><span class="fa fa-refresh"></span> {PHP.L.Resync}</a>
