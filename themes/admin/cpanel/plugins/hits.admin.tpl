@@ -62,10 +62,9 @@
 
         <div class="panel panel-default margintop20">
             <div class="panel-heading">
-                <h4 class="panel-title">{PHP.L.hits_byyear}</h4>
+                <h4 class="panel-title">{PHP.L.hits_bymonth}</h4>
             </div>
             <div class="panel-body">
-                <h3>{PHP.L.hits_bymonth}:</h3>
                 <table class="table table-hover">
                     <!-- BEGIN: ROW_MONTH -->
                     <tr>
