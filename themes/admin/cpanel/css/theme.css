@@ -1095,6 +1095,9 @@ table.table-flat td	{ padding:5px; border:0; }
     border-color: #e2e7eb;
     color: #242a30;
 }
+.pagination > li > span {
+    border: none;
+}
 .pager.pager-without-border li > a,
 .pager.pager-without-border li > span,
 .pagination.pagination-without-border > li > a {
@@ -1112,7 +1115,8 @@ table.table-flat td	{ padding:5px; border:0; }
     filter: alpha(opacity=60);
     border-color: #ddd;
 }
-.pagination > li > a {
+.pagination > li > a,
+.pagination > li > span{
     color: #242a30;
     margin-left: 5px;
     -webkit-border-radius: 3px !important;
