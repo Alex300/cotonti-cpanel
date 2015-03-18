@@ -13,7 +13,7 @@
     {
         var objectparent = $(object).parent();
         objectparent = $(objectparent).parent();
-        $(objectparent).find('.item_title').attr('value', '');
+        $(objectparent).find("input[name^='item_title']").val('');
         $(objectparent).hide();
         return false;
     }
