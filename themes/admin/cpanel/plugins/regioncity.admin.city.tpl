@@ -13,13 +13,15 @@
                             <tr>
                                 <th class="width50">{PHP.L.Title}</th>
                                 <th></th>
-                                <th class="width20">{PHP.L.Action}</th>
+                                <th class="width15"></th>
+                                <th class="width15">{PHP.L.Action}</th>
                             </tr>
                         </thead>
                         <!-- BEGIN: ROWS -->
                         <tr>
                             <td>{CITY_ROW_NAME} </td>
                             <td>{CITY_ROW_REGION}</td>
+                            <td>{CITY_ROW_SORT}</td>
                             <td>
                                 <a title="{PHP.L.Delete}" href="{CITY_ROW_DEL_URL}" class="confirmLink btn btn-danger"><span
                                         class="fa fa-trash"></span> {PHP.L.Delete}</a>

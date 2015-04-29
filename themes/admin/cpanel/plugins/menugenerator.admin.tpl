@@ -5,7 +5,8 @@
     .menu-level-4{ padding-left: 55px !important; }
 </style>
 <div class=" button-toolbar block">
-    <a href="{PHP.db_menugenerator|cot_url('admin', 'm=extrafields&n=$this')}" class="btn btn-info">{PHP.L.adm_extrafields_desc}</a>
+    <a href="{PHP.db_menugenerator|cot_url('admin', 'm=extrafields&n=$this')}" class="btn btn-info"><span class="fa fa-check-square-o"></span>
+        {PHP.L.adm_extrafields_desc}</a>
 </div>
 <script type="text/javascript">
     var qid={PHP.local_max};
