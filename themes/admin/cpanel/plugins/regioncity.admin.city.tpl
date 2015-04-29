@@ -13,7 +13,7 @@
                             <tr>
                                 <th class="width50">{PHP.L.Title}</th>
                                 <th></th>
-                                <th class="width15"></th>
+                                <th class="width15">{PHP.L.Order}</th>
                                 <th class="width15">{PHP.L.Action}</th>
                             </tr>
                         </thead>
