@@ -32,6 +32,8 @@
 <script src="themes/admin/cpanel/js/crossbrowserjs/html5shiv.js"></script>
 <![endif]-->
 <script src="themes/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="themes/admin/cpanel/js/masonry.pkgd.min.js"></script>
+
 <!-- ================== END BASE JS ================== -->
 
 <!-- ================== BEGIN PAGE LEVEL JS ================== -->
