@@ -14,7 +14,7 @@
     {ADMIN_HOME_MAINPANEL}
     <!-- END: MAINPANEL -->
 
-    <div class="col-xs-12 col-sm-6 grid-item">
+    <div class="col-xs-12 col-sm-6">
         <div class="panel panel-inverse margintop20">
             <div class="panel-heading">
                 <h4 class="panel-title">Cotonti:</h4>
