@@ -244,4 +244,8 @@ $(function() {
     /* ==== /Select2 ==== */
 
     handlePageContentView();
+
+    /* ==== Masonry: Cascading grid layout library ==== */
+    $('.js-masonry').children('div').addClass('grid-item');
+    /* ==== /Cascading grid layout library ==== */
 });

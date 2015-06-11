@@ -1,5 +1,5 @@
 <!-- BEGIN: MAIN -->
-<div class="col-xs-12 col-sm-6 grid-item">
+<div class="col-xs-12 col-sm-6">
     <div class="panel panel-default margintop20">
         <div class="panel-heading">
             <h4 class="panel-title">{PHP.L.Pages}:</h4>
