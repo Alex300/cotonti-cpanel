@@ -27,7 +27,7 @@
                         <td>{PHP.L.Version}:</td>
                         <td>
                             <!-- IF {PHP.isinstalled} AND {ADMIN_EXTENSIONS_VERSION_COMPARE} > 0 -->
-                            <span class="highlight_red">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span> / <span class="highlight_green">{ADMIN_EXTENSIONS_VERSION}</span>
+                            <span class="text-danger">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span> / <span class="text-success">{ADMIN_EXTENSIONS_VERSION}</span>
                             <!-- ELSE -->
                             {ADMIN_EXTENSIONS_VERSION}
                             <!-- ENDIF -->
@@ -69,7 +69,7 @@
                     <tr>
                         <td>{ADMIN_EXTENSIONS_DEPENDENCIES_TITLE}:</td>
                         <td>
-                            <ul class="paddingleft10">
+                            <ul class="list-unstyled">
                                 <!-- BEGIN: DEPENDENCIES_ROW -->
                                 <li>
                                     <a href="{ADMIN_EXTENSIONS_DEPENDENCIES_ROW_URL}" class="{ADMIN_EXTENSIONS_DEPENDENCIES_ROW_CLASS}">{ADMIN_EXTENSIONS_DEPENDENCIES_ROW_NAME}</a>
@@ -319,7 +319,7 @@
 				<td class="">{ADMIN_EXTENSIONS_CODE_X}</td>
 				<td class="centerall">
 					<!-- IF {PHP.part_status} != 3 AND {ADMIN_EXTENSIONS_VERSION_COMPARE} > 0 -->
-					<span class="highlight_red">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span> / <span class="highlight_green">{ADMIN_EXTENSIONS_VERSION}</span>
+					<span class="text-danger">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span> / <span class="text-success">{ADMIN_EXTENSIONS_VERSION}</span>
 					<!-- ELSE -->
 					{ADMIN_EXTENSIONS_VERSION}
 					<!-- ENDIF -->

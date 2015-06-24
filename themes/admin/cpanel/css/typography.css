@@ -30,11 +30,11 @@ a:focus {
 .italic	{ font-style:italic;}
 
 .text-inverse { color: #2d353c !important; }
-.text-success { color: #00acac !important; }
+.text-success, .highlight_green { color: #00acac !important; }
 .text-info { color: #49b6d6 !important; }
 .text-primary { color: #348fe2 !important; }
 .text-warning { color: #f59c1a !important; }
-.text-danger { color: #ff5b57 !important; }
+.text-danger, .highlight_red { color: #ff5b57 !important; }
 .text-white { color: #fff !important; }
 
 .bg-white { background: #ffffff !important; }
