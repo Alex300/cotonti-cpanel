@@ -93,10 +93,13 @@ body {
     margin-right: 10px;
     padding: 12px 20px;
     height: 54px;
-    width: 220px;
+    width: auto;
+    min-width: 220px;
+    max-width: 350px;
     font-weight: 100;
     font-size: 18px;
     line-height: 30px;
+    overflow-x: hidden;
 }
 .navbar-brand > img {
     display: inline-block;
