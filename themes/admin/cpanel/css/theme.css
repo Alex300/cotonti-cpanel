@@ -99,7 +99,7 @@ body {
     font-weight: 100;
     font-size: 18px;
     line-height: 30px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .navbar-brand > img {
     display: inline-block;
