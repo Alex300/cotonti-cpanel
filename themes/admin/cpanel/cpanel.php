@@ -5,13 +5,13 @@
  * @package Cotonti
  * @subpackage  Admin
  * @author Alex - Studio Portal30
- * @copyright Portal30 2015 http://portal30.ru
+ * @copyright Portal30 http://portal30.ru
  */
 defined('COT_CODE') or die('Wrong URL.');
 
 require_once cot::$cfg['themes_dir'].'/admin/cpanel/inc/cpanel.functions.php';
 
-$R['breadcrumbs_container'] = '<ol class="breadcrumb pull-right">{$crumbs}</ol>'."\n";
+$R['breadcrumbs_container'] = '<ol class="breadcrumb">{$crumbs}</ol>'."\n";
 $R['breadcrumbs_separator'] = "\n";
 $R['breadcrumbs_link'] = '<a href="{$url}" title="{$title}">{$title}</a>';
 $R['breadcrumbs_crumb'] = '<li>{$crumb}</li>';
@@ -44,3 +44,5 @@ $R['link_pagenav_first'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden
 $R['link_pagenav_prev'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_prev'].'</span><span class="sr-only">Prev</span></a></li>';
 $R['link_pagenav_next'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_next'].'</span><span class="sr-only">Next</span></a></li>';
 $R['link_pagenav_last'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_last'].'</span><span class="sr-only">Last</span></a></li>';
+
+require_once cot::$cfg['themes_dir'].'/admin/cpanel/cpanel.rc.php';

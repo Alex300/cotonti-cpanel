@@ -565,8 +565,12 @@ body {
     padding: 0;
     margin: 0;
     background: none;
+    display: inline-block;
 }
-.breadcrumb > li {
+#breadcrumbs .breadcrumb {
+    float: right;
+}
+#breadcrumbs .breadcrumb > li {
     line-height: 28px;
 }
 .breadcrumb > li a {

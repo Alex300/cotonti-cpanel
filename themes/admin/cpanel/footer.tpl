@@ -22,23 +22,12 @@
         <i class="fa fa-angle-up"></i>
     </a>
 </div><!-- /#page container -->
-{FOOTER_RC}
-<!-- ================== BEGIN BASE JS ================== -->
-<!--<script src="lib/jquery-ui-1.11.2/jquery-ui.min.js"></script>-->
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
 <script src="themes/admin/cpanel/js/crossbrowserjs/excanvas.min.js"></script>
 <script src="themes/admin/cpanel/js/crossbrowserjs/respond.min.js"></script>
 <script src="themes/admin/cpanel/js/crossbrowserjs/html5shiv.js"></script>
 <![endif]-->
-<script src="themes/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="themes/admin/cpanel/js/masonry.pkgd.min.js"></script>
-
-<!-- ================== END BASE JS ================== -->
-
-<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-<script src="themes/admin/cpanel/js/cpanel.js"></script>
-<!-- ================== END PAGE LEVEL JS ================== -->
+{FOOTER_RC}
 </body>
 </html>
 <!-- END: FOOTER -->

@@ -19,16 +19,6 @@
     {HEADER_HEAD}
     <link rel="shortcut icon" href="favicon.ico" />
     {HEADER_COMPOPUP}
-
-    <!--<link href="lib/jquery-ui/jquery-ui.min.css" rel="stylesheet" />-->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="themes/admin/cpanel/css/animate.css" rel="stylesheet" />
-    <link href="themes/admin/cpanel/css/theme.css" rel="stylesheet" />
-    <link href="themes/admin/cpanel/css/theme-responsive.css" rel="stylesheet" />
-    <link href="themes/admin/cpanel/css/typography.css" rel="stylesheet" />
-
 </head>
 <body>
 <div id="page-loader" class="fade in"><span class="spinner"></span></div>

@@ -5,7 +5,7 @@
 <!-- ENDIF -->
 <!-- BEGIN: MAIN -->
 	<!-- BEGIN: BODY -->
-        {ADMIN_BREADCRUMBS}
+        <div id="breadcrumbs">{ADMIN_BREADCRUMBS}</div>
         <!-- IF {ADMIN_TITLE} OR {ADMIN_SUBTITLE}  -->
         <h1 class="page-header">{ADMIN_TITLE}<!-- IF {ADMIN_SUBTITLE}  --> <small>{ADMIN_SUBTITLE}</small><!-- ENDIF --></h1>
         <!-- ENDIF -->
