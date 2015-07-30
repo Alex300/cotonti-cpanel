@@ -35,7 +35,7 @@
                     <!-- ENDIF -->
                 </td>
                 <td class="centerall">
-                    <a href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}" class="ajax btn btn-sm btn-info">
+                    <a href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}" class="btn btn-sm btn-info">
                         <span class="fa fa-refresh"></span> {PHP.L.Reset}
                     </a>
                 </td>
