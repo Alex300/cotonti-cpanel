@@ -144,6 +144,9 @@ class cpanel_MainController{
         ob_start();
         ob_implicit_flush(false);
         phpinfo();
-        return ob_get_clean();
+
+        Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/css/phpinfo.css');
+
+        return '<div id="php-info">'.ob_get_clean().'</div>';
     }
 }
