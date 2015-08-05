@@ -28,6 +28,6 @@ Resources::addFile('themes/admin/cpanel/css/typography.css');
 
 
 Resources::linkFileFooter('@bootstrap.js');
-Resources::linkFileFooter('themes/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js');
-Resources::linkFileFooter('themes/admin/cpanel/js/masonry.pkgd.min.js');
-Resources::linkFileFooter('themes/admin/cpanel/js/cpanel.js');
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js');
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/masonry.pkgd.min.js');
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/cpanel.js');

@@ -1,0 +1,21 @@
+/**
+ * Cpanel Module
+ *
+ * @package Cotonti
+ * @subpackage  Admin
+ * @author Alex - Studio Portal30
+ * @copyright Portal30 http://portal30.ru
+ */
+a:link { background: none }
+#php-info a:link {
+    background-color: #ffffff;
+    color: #000099;
+    text-decoration: none;
+}
+img{ float: none }
+#php-info img {float: right; border: 0;}
+
+a.sidebar-minify-btn {
+    background: #1b1f24 none repeat scroll 0 0;
+    color: #ffffff;
+}
