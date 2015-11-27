@@ -1,7 +1,7 @@
 <?php
 defined('COT_CODE') or die('Wrong URL');
 
-require_once cot_incfile('comments', 'plug');
+if(cot_plugin_active('comments')) require_once cot_incfile('comments', 'plug');
 
 /**
  * Cpanel Main Controller
