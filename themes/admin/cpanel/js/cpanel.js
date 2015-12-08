@@ -1,26 +1,3 @@
-/*
-    ----------------------------
-        APPS CONTENT TABLE
-    ----------------------------
-    
-    <!-- ======== GLOBAL SCRIPT SETTING ======== -->
-    01. Handle Scrollbar
-    
-    02. Handle Sidebar - Menu
-    03. Handle Sidebar - Mobile View Toggle
-    04. Handle Sidebar - Minify / Expand
-    05. Handle Page Load - Fade in
-    06. Handle Panel - Remove / Reload / Collapse / Expand
-    07. Handle Panel - Draggable
-    08. Handle Tooltip & Popover Activation
-    09. Handle Scroll to Top Button Activation
-	
-    <!-- ======== APPLICATION SETTING ======== -->
-    Application Controller
-*/
-
-
-
 /* 01. Handle Scrollbar
 ------------------------------------------------ */
 var handleSlimScroll = function() {
@@ -31,9 +8,6 @@ var handleSlimScroll = function() {
     $(this).slimScroll({height: dataHeight, alwaysVisible: true});
   });
 };
-
-
-
 
 
 /* 05. Handle Page Load - Fade in
@@ -236,9 +210,9 @@ $(function() {
     /* ==== /Tooltip ==== */
 
     /* ==== Select2 ==== */
-    if((typeof select2) != 'undefined') {
+    if((typeof jQuery.fn.select2) != 'undefined') {
         $("select.select2").select2({
-            placeholder: "Кликните для выбора"
+
         });
     }
     /* ==== /Select2 ==== */

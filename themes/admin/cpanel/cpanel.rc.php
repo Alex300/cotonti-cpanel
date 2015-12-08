@@ -21,13 +21,13 @@ if(Resources::getAlias('@fontAwesome.css') === null) Resources::setAlias('@fontA
 Resources::addFile('@bootstrap.css');
 Resources::addFile('@bootstrapTheme.css');
 Resources::addFile('@fontAwesome.css');
-Resources::addFile('themes/admin/cpanel/css/animate.css');
-Resources::addFile('themes/admin/cpanel/css/theme.css');
-Resources::addFile('themes/admin/cpanel/css/theme-responsive.css');
-Resources::addFile('themes/admin/cpanel/css/typography.css');
+Resources::addFile('themes/admin/cpanel/css/animate.css', 'css', 200);
+Resources::addFile('themes/admin/cpanel/css/theme.css', 'css', 200);
+Resources::addFile('themes/admin/cpanel/css/theme-responsive.css', 'css', 200);
+Resources::addFile('themes/admin/cpanel/css/typography.css', 'css', 200);
 
 
 Resources::linkFileFooter('@bootstrap.js');
-Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js');
-Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/masonry.pkgd.min.js');
-Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/cpanel.js');
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js', 'js', 200);
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/masonry.pkgd.min.js', 'js', 200);
+Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/js/cpanel.js', 'js', 300);
