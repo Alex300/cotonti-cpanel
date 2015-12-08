@@ -1,33 +1,23 @@
-/* 01. Handle Scrollbar
------------------------------------------------- */
-var handleSlimScroll = function() {
-  "use strict";
-  $('[data-scrollbar=true]').each( function() {
-    var dataHeight = $(this).attr('data-height');
-        dataHeight = (!dataHeight) ? $(this).height() : dataHeight;
-    $(this).slimScroll({height: dataHeight, alwaysVisible: true});
-  });
-};
-
-
-/* 05. Handle Page Load - Fade in
------------------------------------------------- */
-var handlePageContentView = function() {
-  "use strict";
-  $(window).load(function() {
-      $.when($('#page-loader').addClass('hide')).done(function() {
-        $('#page-container').addClass('in');
-      });
-  });
-};
+/**
+ * Cpanel Admin Theme
+ * Load resources
+ *
+ * @package Cotonti
+ * @subpackage  Admin
+ */
 
 $(function() {
     "use strict";
 
     /* === Init All === */
 
-    // slimscroll
-    handleSlimScroll();
+    /* ==== Scrollbar ==== */
+    $('[data-scrollbar=true]').each( function() {
+        var dataHeight = $(this).attr('data-height');
+        dataHeight = (!dataHeight) ? $(this).height() : dataHeight;
+        $(this).slimScroll({height: dataHeight, alwaysVisible: true});
+    });
+    /* ==== /Scrollbar ==== */
 
     /* ==== Sidebar ==== */
     $('.sidebar .nav > .has-sub > a').click(function(e) {
@@ -217,7 +207,13 @@ $(function() {
     }
     /* ==== /Select2 ==== */
 
-    handlePageContentView();
+    /* ==== Page Load - Fade in ==== */
+    $(window).load(function() {
+        $.when($('#page-loader').addClass('hide')).done(function() {
+            $('#page-container').addClass('in');
+        });
+    });
+    /* ==== Page Load - Fade in ==== */
 
     /* ==== Masonry: Cascading grid layout library ==== */
     $('.js-masonry').children('div').addClass('grid-item');
