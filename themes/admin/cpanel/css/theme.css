@@ -1213,7 +1213,13 @@ select[name$="[month]"],
 select[name$="[year]"] {
     display: inline-block;
     width: 30%;
-    max-width: 100px;
+    max-width: 70px;
+}
+select[name$="[month]"] {
+    max-width: 110px;
+}
+select[name$="[year]"] {
+    max-width: 82px;
 }
 /* === /Miscellaneous === */
 
