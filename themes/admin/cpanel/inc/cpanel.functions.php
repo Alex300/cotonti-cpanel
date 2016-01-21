@@ -9,18 +9,31 @@
  */
 defined('COT_CODE') or die('Wrong URL.');
 
-/**
- * Класс для элемента формы
- * @param $name
- * @return string
- */
-function cot_formGroupClass($name){
-    global $cfg;
+if(!function_exists('cot_formGroupClass')) {
+    /**
+     * Класс для элемента формы
+     * @param $name
+     * @return string
+     */
+    function cot_formGroupClass($name)
+    {
+        global $currentMessages;
 
-    $error = $cfg['msg_separate'] ? cot_implode_messages($name, 'error') : '';
-    if($error) return 'has-error';
+        if (!cot::$cfg['msg_separate']) return '';
 
-    return '';
+        $error = '';
+        $error .= cot_implode_messages($name, 'error');
+
+        if ($error) return 'has-error';
+
+        if (!empty($currentMessages[$name]) && is_array($currentMessages[$name])) {
+            foreach ($currentMessages[$name] as $msg) {
+                if ($msg['class'] == 'error') return 'has-error';
+            }
+        }
+
+        return '';
+    }
 }
 
 /**
