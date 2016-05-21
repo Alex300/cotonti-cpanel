@@ -1168,6 +1168,9 @@ table.table-flat td	{ padding:5px; border:0; }
     border: none;
     margin: 20px 0 10px 0;
 }
+.modal-body .alert {
+    margin-top: 0;
+}
 .alert.alert-success {
     background: #7cdda7;
 }
