@@ -29,10 +29,14 @@ $R['user_default_avatar'] = '<img src="datas/defaultav/blank.png" alt="'.cot::$L
 /**
  * Forms
  */
-$R['input_select'] = '<select name="{$name}" {$attrs} class="form-control">{$options}</select>{$error}';
-$R['input_submit'] = '<button type="submit" name="{$name}" {$attrs} class="form-control" >{$value}</button>';
-$R['input_text'] = '<input type="text" name="{$name}" value="{$value}" {$attrs} class="form-control" />{$error}';
+$R['input_select']   = '<select name="{$name}" {$attrs} class="form-control">{$options}</select>{$error}';
+$R['input_submit']   = '<button type="submit" name="{$name}" {$attrs} class="form-control" >{$value}</button>';
+$R['input_text']     = '<input type="text" name="{$name}" value="{$value}" {$attrs} class="form-control" />{$error}';
 $R['input_textarea'] = '<textarea name="{$name}" rows="{$rows}" cols="{$cols}" {$attrs} class="form-control">{$value}</textarea>{$error}';
+$R['input_check']    = '<div class="checkbox"><label><input type="checkbox" name="{$name}" value="{$value}"{$checked}{$attrs} /> {$title}</label></div>';
+$R['input_checkbox'] = '<div class="checkbox"><input type="hidden" name="{$name}" value="{$value_off}" /><label>'.
+    '<input type="checkbox" name="{$name}" value="{$value}"{$checked}{$attrs} /> {$title}</label></div>';
+$R['input_radio'] = '<div class="radio"><label><input type="radio" name="{$name}" value="{$value}"{$checked}{$attrs} /> {$title}</label></div>';
 
 /**
  * Pagination
