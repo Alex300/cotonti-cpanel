@@ -37,14 +37,14 @@
         });
         $("#menugeneratorbefore").show();
 //        if(ident < 2)
-//        {$("#addoption").click();}
+//        { $("#addoption").click(); }
 
     });
 </script>
 
 <!-- BEGIN: GENERAL -->
 <div class="panel panel-inverse margintop20">
-    <div class="panel-heading"></div>
+    <div class="panel-heading">{PHP.L.menugenerator}</div>
     <div class="panel-body">
         <form action="{MENU_FORMACTION}" method="post" name="general">
             <table id="menugenerator" class="table table-responsive table-condensed table-striped">

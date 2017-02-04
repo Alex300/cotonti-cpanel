@@ -13,7 +13,19 @@
         <div class="clearfix"></div>
 
 		<div id="main" class="body">
-			{ADMIN_MAIN}
+            <!-- IF {ADMIN_PANEL} == 1 -->
+            <div class="panel panel-default margintop20">
+                <div class="panel-heading">
+                    <h4 class="panel-title">{ADMIN_PANEL_TITLE}</h4>
+                </div>
+                <div class="panel-body">
+                <!-- ENDIF -->
+                {ADMIN_MAIN}
+                <!-- IF {ADMIN_PANEL} == 1 -->
+                </div>
+            </div>
+            <!-- ENDIF -->
+
 			<!-- IF {ADMIN_HELP} -->
             <div class="well margintop20">
                 <h4 style="margin-top: 0"><span class="fa fa-question-circle"></span> {PHP.L.Help}:</h4>

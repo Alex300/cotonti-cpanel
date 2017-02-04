@@ -3,8 +3,8 @@
  *
  * @package Cotonti
  * @subpackage  Admin
- * @author Alex - Studio Portal30
- * @copyright Portal30 http://portal30.ru
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright (c) Portal30 Studio http://portal30.ru
  */
 body {
     padding-top: 54px;
@@ -336,9 +336,25 @@ body {
     font-weight: 300;
     font-size: 10px;
 }
-.sidebar .nav > li > a .caret {
+.sidebar .nav > li > a .opener {
+    width: 14px;
+    height: 14px;
+    border: #5e6267 1px solid;
     float: right;
-    margin-top: 9px;
+    margin-top: 5px;
+    border-radius: 50%;
+    line-height: 12px;
+    position: relative;
+}
+.sidebar .nav > li.active  > a .opener {
+    border-color: #fff;
+}
+.sidebar .nav > li > a .caret {
+    display: block;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    left: 2px;
 }
 .sidebar .has-sub.active > .sub-menu {
     display: block;
@@ -980,6 +996,9 @@ table.table-flat td	{ padding:5px; border:0; }
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
     border-top: 1px solid #eee;
+}
+.panel-body .alert {
+    margin-top: 10px;
 }
 .panel-footer {
     background: #fff;

@@ -8,8 +8,8 @@ if(cot_plugin_active('comments')) require_once cot_incfile('comments', 'plug');
  *
  * @package Cotonti
  * @subpackage  Admin
- * @author Alex - Studio Portal30
- * @copyright Portal30 2014 http://portal30.ru
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright © Portal30 Studio http://portal30.ru
  */
 class cpanel_MainController{
 

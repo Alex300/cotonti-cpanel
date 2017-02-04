@@ -20,16 +20,30 @@ $(function() {
     /* ==== /Scrollbar ==== */
 
     /* ==== Sidebar ==== */
-    $('.sidebar .nav > .has-sub > a').click(function(e) {
-        var url = $(this).attr('href');
-        if(url == '#' || url == '') e.preventDefault();
+    $('.sidebar .nav > .has-sub > a > .opener').click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-        var target = $(this).next('.sub-menu');
-        var otherMenu = '.sidebar .nav > li.has-sub > .sub-menu';
+        var a = $(this).closest('a'),
+            target = a.next('.sub-menu'),
+            otherMenu = '.sidebar .nav > li.has-sub > .sub-menu';
 
         $(otherMenu).not(target).slideUp(250);
         $(target).slideToggle(250);
     });
+
+    $('.sidebar .nav > .has-sub > a').click(function(e) {
+        var url = $(this).attr('href');
+        if(url == '#' || url == '') {
+            e.preventDefault();
+            var target = $(this).next('.sub-menu'),
+                otherMenu = '.sidebar .nav > li.has-sub > .sub-menu';
+
+            $(otherMenu).not(target).slideUp(250);
+            $(target).slideToggle(250);
+        }
+    });
+
     $('.sidebar .nav > .has-sub .sub-menu li.has-sub > a').click(function(e) {
         var url = $(this).attr('href');
         if(url == '#' || url == '') e.preventDefault();

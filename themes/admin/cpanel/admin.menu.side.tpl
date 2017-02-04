@@ -7,7 +7,7 @@
             <a href="{MENU_URL}" <!-- IF {MENU_DESC} -->title="{MENU_DESC}"<!-- ENDIF -->><!-- ENDIF -->
                 <!-- IF {MENU_ICON_CLASS} --><i class="{MENU_ICON_CLASS}"></i><!-- ENDIF -->
                 <span>{MENU_TITLE}</span>
-                <!-- IF {MENU_SUBMENU} --><b class="caret pull-right"></b><!-- ENDIF -->
+        <!-- IF {MENU_SUBMENU} --><span class="opener"><b class="caret pull-right"></b></span><!-- ENDIF -->
         <!-- IF {MENU_URL} --></a><!-- ENDIF -->
         {MENU_SUBMENU}
     </li>

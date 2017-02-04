@@ -8,54 +8,56 @@ Order=5
 /**
  * Cpanel Module
  *
+ * Theme settings
+ *
  * @package Cotonti
  * @subpackage  Admin
- * @author Alex - Studio Portal30
- * @copyright Portal30 2014 http://portal30.ru
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright © Portal30 Studio http://portal30.ru
  */
 defined('COT_CODE') or die('Wrong URL');
 
-if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
+if (!COT_AJAX && defined('COT_ADMIN') && cot::$cfg['admintheme'] == 'cpanel') {
 
     require_once cot_incfile('cpanel', 'module');
 
     // System menus
     $admin_MenuTop = array(
         'extensions' => array(
-            'title' => $L['Extensions'],
+            'title' => cot::$L['Extensions'],
             'url' => cot_url('admin', 'm=extensions'),
             'icon_class' => 'fa fa-plug',
         ),
         'users' => array(
-            'title' => $L['Users'],
+            'title' => cot::$L['Users'],
             'url' => cot_url('admin', 'm=extensions'),
             'icon_class' => 'fa fa-users',
             'items' => array(
                 array(
-                    'title' => $L['Users'],
+                    'title' => cot::$L['Users'],
                     'url' => cot_url('users'),
                 ),
                 array(
-                    'title' => $L['Groups'],
+                    'title' => cot::$L['Groups'],
                     'url' => cot_url('admin', 'm=users'),
                 ),
                 array(
-                    'title' => $L['Configuration'],
+                    'title' => cot::$L['Configuration'],
                     'url' => cot_url('admin', array('m'=>'config','n'=>'edit','o'=>'module','p'=>'users')),
                 ),
             )
         ),
         'view_site' => array(
-            'title' => $L['hea_viewsite'],
-            'url' => $cfg['mainurl'],
+            'title' => cot::$L['hea_viewsite'],
+            'url' => cot::$cfg['mainurl'],
             'icon_class' => 'fa fa-globe',
         ),
         'help' => array(
-            'title' => $L['Help'],
+            'title' => cot::$L['Help'],
             'icon_class' => 'fa fa-question-circle',
             'items' => array(
                 array(
-                    'title' => $L['System'],
+                    'title' => cot::$L['System'],
                     'url' => cot_url('admin', 'm=infos'),
                     'icon_class' => 'glyphicon glyphicon-file',
                 ),
@@ -70,7 +72,7 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
 
     $admin_MenuSide = array(
         'home' => array(
-            'title' => $L['Home'],
+            'title' => cot::$L['Home'],
             'url' => cot_url('cpanel'),
             'icon_class' => 'fa fa-desktop',
             'active' => (empty($m) || ($m == 'main' && empty($a) )),
@@ -80,58 +82,59 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
         'configuration' => array(
             'title' => $L['Configuration'],
             'icon_class' => 'fa fa-wrench',
+            'url' => cot_url('admin', 'm=config'),
             'active' => ($m == 'config'),
             'items' => array(
+//                array(
+//                    'title' => $L['Configuration'],
+//                    'icon_class' => 'fa fa-wrench',
+//                    'url' => cot_url('admin', 'm=config'),
+//                    'active' => ($m == 'config' && empty($n)),
+//                ),
                 array(
-                    'title' => $L['Configuration'],
-                    'icon_class' => 'fa fa-wrench',
-                    'url' => cot_url('admin', 'm=config'),
-                    'active' => ($m == 'config' && empty($n)),
-                ),
-                array(
-                    'title' => $L['Locale'],
+                    'title' => cot::$L['Locale'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=locale'),
                     'icon_class' => 'fa fa-language',
                     'active' => ($m == 'config' && $p == 'locale'),
                 ),
                 array(
-                    'title' => $L['core_main'],
+                    'title' => cot::$L['core_main'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=main'),
                     'icon_class' => 'fa fa-cogs',
                     'active' => ($m == 'config' && $p == 'main'),
                 ),
                 array(
-                    'title' => $L['Menus'],
+                    'title' => cot::$L['Menus'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=menus'),
                     'icon_class' => 'fa fa-list-alt',
                     'active' => ($m == 'config' && $p == 'menus'),
                 ),
                 array(
-                    'title' => $L['core_performance'],
+                    'title' => cot::$L['core_performance'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=performance'),
                     'icon_class' => 'fa fa-tachometer',
                     'active' => ($m == 'config' && $p == 'performance'),
                 ),
                 array(
-                    'title' => $L['Security'],
+                    'title' => cot::$L['Security'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=security'),
                     'icon_class' => 'fa fa-shield',
                     'active' => ($m == 'config' && $p == 'security'),
                 ),
                 array(
-                    'title' => $L['core_sessions'],
+                    'title' => cot::$L['core_sessions'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=sessions'),
                     'icon_class' => 'fa fa-cog',
                     'active' => ($m == 'config' && $p == 'sessions'),
                 ),
                 array(
-                    'title' => $L['Themes'],
+                    'title' => cot::$L['Themes'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=theme'),
                     'icon_class' => 'fa fa-picture-o',
                     'active' => ($m == 'config' && $p == 'theme'),
                 ),
                 array(
-                    'title' => $L['core_title'],
+                    'title' => cot::$L['core_title'],
                     'url' => cot_url('admin', 'm=config&n=edit&o=core&p=title'),
                     'icon_class' => 'fa fa-header',
                     'active' => ($m == 'config' && $p == 'title'),
@@ -140,31 +143,31 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
         ),
 
         'structure' => array(
-            'title' => $L['Structure'],
+            'title' => cot::$L['Structure'],
             'url' => cot_url('admin', array('m' => 'structure')),
             'icon_class' => 'fa fa-folder-open',
             'active' => ($m == 'structure'),
         ),
 
         'extensions' => array(
-            'title' => $L['Extensions'],
+            'title' => cot::$L['Extensions'],
             'url' => cot_url('admin', array('m' => 'extensions')),
             'icon_class' => 'fa fa-plug',
             'active' => ($m == 'extensions'),
         ),
 
         'users' => array(
-            'title' => $L['Users'],
+            'title' => cot::$L['Users'],
             'icon_class' => 'fa fa-users',
             'active' => ($m == 'users'),
             'items' => array(
                 array(
-                    'title' => $L['Users'],
+                    'title' => cot::$L['cpanel_users_list'],
                     'icon_class' => 'fa fa-user',
                     'url' => cot_url('users'),
                 ),
                 array(
-                    'title' => $L['Groups'],
+                    'title' => cot::$L['Groups'],
                     'url' => cot_url('admin', array('m' => 'users')),
                     'icon_class' => 'fa fa-users',
                     'active' => ($m == 'users'),
@@ -176,13 +179,14 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
             'title' => $L['Other'],
             'icon_class' => 'fa fa-archive',
             'active' => (in_array($m, array('other', 'cache', 'extrafields')) && empty($p) ),
+            'url' => cot_url('admin', array('m' => 'other')),
             'items' => array(
-                array(
-                    'title' => $L['Other'],
-                    'icon_class' => 'fa fa-archive',
-                    'url' => cot_url('admin', array('m' => 'other')),
-                    'active' => ($m == 'other' && empty($p)),
-                ),
+//                array(
+//                    'title' => $L['Other'],
+//                    'icon_class' => 'fa fa-archive',
+//                    'url' => cot_url('admin', array('m' => 'other')),
+//                    'active' => ($m == 'other' && empty($p)),
+//                ),
                 array(
                     'title' => $L['adm_internalcache'],
                     'url' => cot_url('admin', array('m' => 'cache')),
@@ -224,6 +228,7 @@ if (!COT_AJAX && defined('COT_ADMIN') && $cfg['admintheme'] == 'cpanel'){
             'url' => cot_url('pfs'),
             'icon_class' => 'fa fa-folder-open',
         );
+
     } elseif(cot_module_active('files')) {
         // todo files module must add this item itself
         $admin_MenuUser['pfs'] = array(

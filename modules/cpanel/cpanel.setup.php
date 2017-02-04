@@ -4,10 +4,10 @@
 Code=cpanel
 Name=Admin Control Panel
 Description=Admin Control Panel module for Cpanel admin theme
-Version=0.0.2
-Date=2015-07-27
+Version=0.0.3
+Date=2017-02-03
 Author=Kalnov Alexey    (kalnovalexey@yandex.ru)
-Copyright=(с) 2014-2015 Portal30 Studio http://portal30.ru
+Copyright=(с) 2014-2017 Portal30 Studio http://portal30.ru
 Auth_guests=
 Lock_guests=RW12345A
 Auth_members=
@@ -23,7 +23,7 @@ Lock_members=
  *
  * @package Cotonti
  * @subpackage  Admin
- * @author Alex - Studio Portal30
- * @copyright Portal30 2014-2015 http://portal30.ru
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright © Portal30 2014-2017 Studio http://portal30.ru
  */
 defined('COT_CODE') or die('Wrong URL');
