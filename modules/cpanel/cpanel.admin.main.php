@@ -16,14 +16,4 @@ Hooks=admin.main
 
 if (defined('COT_ADMIN') && cot::$cfg['admintheme'] == 'cpanel') {
     require_once cot_incfile('cpanel', 'module');
-
-    // Cpanel Settings
-    $admin_cfg = array(
-        // Panel for content will be created automatically
-        // Turn it off to use custom panels or no use any panels
-        'useDefaultPanel' => 1,
-
-        // Default panel title
-        'panelTitle' => null,
-    );
 }

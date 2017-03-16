@@ -9,7 +9,29 @@
  */
 defined('COT_CODE') or die('Wrong URL.');
 
-global $admin_cfg;
+class cpanel
+{
+    /**
+     * Panel for content will be created automatically
+     * Turn it off to use custom panels or no use any panels
+     * @var bool
+     */
+    public static $useDefaultPanel = true;
+
+    /**
+     * @var string Default panel title
+     */
+    public static $panelTitle = null;
+
+    /**
+     * @var array Menus for Admin Panel
+     */
+    public static $menu = array(
+        'side' => array(),
+        'top'  => array(),
+        'user' => array(),
+    );
+}
 
 function cot_renderMenu($tpl, $menu, $level){
 

@@ -14,7 +14,7 @@ Hooks=admin.rights.tags
  */
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
-global $admin_cfg, $cot_groups;
+global $cot_groups;
 
 $admintitle = !empty($adminsubtitle) ? $adminsubtitle: cot::$L['Rights'];
 $adminsubtitle = '';

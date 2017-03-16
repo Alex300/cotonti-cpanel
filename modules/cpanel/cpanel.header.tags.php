@@ -42,10 +42,10 @@ if (!COT_AJAX && defined('COT_ADMIN') && cot::$cfg['admintheme'] == 'cpanel'){
     }
 
     $t->assign(array (
-        'HEADER_MENU_TOP'   => cot_renderMenu('admin.menu.top', $admin_MenuTop, 1),
-        'HEADER_MENU_SIDE'  => cot_renderMenu('admin.menu.side', $admin_MenuSide, 1),
-        'HEADER_MENU_USER'  => cot_renderMenu('admin.menu.user', $admin_MenuUser, 1),
-        'HEADER_NOTICES_COUNT' => (!empty($out['notices_array'])) ? count($out['notices_array']) : 0,
+        'HEADER_MENU_TOP'   => cot_renderMenu('admin.menu.top',  cpanel::$menu['top'],  1),
+        'HEADER_MENU_SIDE'  => cot_renderMenu('admin.menu.side', cpanel::$menu['side'], 1),
+        'HEADER_MENU_USER'  => cot_renderMenu('admin.menu.user', cpanel::$menu['user'], 1),
+        'HEADER_NOTICES_COUNT' => (!empty(cot::$out['notices_array'])) ? count(cot::$out['notices_array']) : 0,
         'HEADER_USER_AVATAR' => $user_avatar,
         'HEADER_USER_FULL_NAME' => htmlspecialchars(cot_user_full_name(cot::$usr['profile'])),
     ));

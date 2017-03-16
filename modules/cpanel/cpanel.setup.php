@@ -4,8 +4,8 @@
 Code=cpanel
 Name=Admin Control Panel
 Description=Admin Control Panel module for Cpanel admin theme
-Version=0.0.3
-Date=2017-02-03
+Version=0.0.4
+Date=2017-03-16
 Author=Kalnov Alexey    (kalnovalexey@yandex.ru)
 Copyright=(с) 2014-2017 Portal30 Studio http://portal30.ru
 Auth_guests=

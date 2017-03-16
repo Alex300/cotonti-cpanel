@@ -18,7 +18,7 @@ defined('COT_CODE') or die('Wrong URL');
 // Более "Человечные названия"
 // Временный кастыль. Но когда нибудь нужно все привести к нормальному виду
 if(cot::$cfg['admintheme'] == 'cpanel') {
-    global $m, $admin_cfg;
+    global $m;
 
     $m = cot_import('m', 'G', 'ALP', 24);
 
@@ -55,28 +55,27 @@ if(cot::$cfg['admintheme'] == 'cpanel') {
     // Standart admin pages
     if(($m == 'config' && empty($o)) || ($m == 'other' && empty($p)) ||
             in_array($m, array('structure', 'extensions', 'users', 'cache', 'extrafields', 'rights')) ) {
-        $admin_cfg['useDefaultPanel'] = 0;
+        cpanel::$useDefaultPanel = false;
     }
 
     // Cotonti extensions
     if(in_array($m, array('page', 'polls')) ||
-        ($m == 'other' && in_array($p, array('banlist', 'comments', 'contact', 'hits', 'ipsearch', 'referers', 'tags'))) ) {
-
-        $admin_cfg['useDefaultPanel'] = 0;
+        ($m == 'other' && in_array($p, array('banlist', 'comments', 'contact', 'hits', 'ipsearch', 'referers', 'tags'))) )
+    {
+        cpanel::$useDefaultPanel = false;
     }
 
     // Thirty part extensions
-    if(in_array($m, array('files'))  ||
-        ($m == 'other' && in_array($p, array('menugenerator', 'regioncity'))) ) {
-        $admin_cfg['useDefaultPanel'] = 0;
+    if(in_array($m, array('files'))  || ($m == 'other' && in_array($p, array('menugenerator', 'regioncity'))) ) {
+        cpanel::$useDefaultPanel = false;
     }
 
     $t->assign(array (
         'ADMIN_BREADCRUMBS' => $crumbs,
         'ADMIN_TITLE' => htmlspecialchars($admintitle),
         'ADMIN_SUBTITLE' => $adminsubtitle,
-        'ADMIN_PANEL' => $admin_cfg['useDefaultPanel'],
-        'ADMIN_PANEL_TITLE' => !empty($admin_cfg['panelTitle']) ? htmlspecialchars($admin_cfg['panelTitle']) : htmlspecialchars($admintitle),
+        'ADMIN_PANEL' => cpanel::$useDefaultPanel ? 1 : 0,
+        'ADMIN_PANEL_TITLE' => !empty(cpanel::$panelTitle) ? htmlspecialchars(cpanel::$panelTitle) : htmlspecialchars($admintitle),
     ));
 }
 
