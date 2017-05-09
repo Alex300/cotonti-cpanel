@@ -122,7 +122,6 @@ $(function() {
     });
     $('.panel-remove').click(function(e) {
         e.preventDefault();
-        alert('dddd');
         $(this).closest('.panel').remove();
     });
 
