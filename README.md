@@ -8,4 +8,4 @@ bootstrap, font-awesome must be installed into 'lib' directory.
 See 'themes/admin/cpanel/cpanel.rc.php'
 
 
-Russian documentation http://portal30.ru/sozdanie-internet-sajtov/free-scripts/cpanel
+Russian documentation http://lily-software.com/sozdanie-internet-sajtov/free-scripts/cpanel

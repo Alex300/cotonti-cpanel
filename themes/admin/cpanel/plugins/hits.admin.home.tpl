@@ -4,7 +4,7 @@
 <div class="col-xs-12 col-sm-6">
     <div class="panel panel-default margintop20">
         <div class="panel-heading">
-            <h4 class="panel-title">{PHP.L.hits_hits}:</h4>
+            <h4 class="panel-title">{HITS_STAT_HEADER}:</h4>
         </div>
         <div class="panel-body">
             <table class="table table-hover table-condensed">
@@ -36,7 +36,7 @@
 <div class="col-xs-12 col-sm-6">
     <div class="panel panel-default margintop20">
         <div class="panel-heading">
-            <h4 class="panel-title">{PHP.L.hits_activity}:</h4>
+            <h4 class="panel-title">{ACTIVITY_STAT_HEADER}:</h4>
         </div>
         <div class="panel-body">
             <table class="table table-hover table-condensed">

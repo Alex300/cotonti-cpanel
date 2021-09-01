@@ -6,7 +6,7 @@
  * @package Cotonti
  * @subpackage  Admin
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
+ * @copyright © Lily Software https://lily-software.com (ex. Portal30 Studio)
  */
 defined('COT_CODE') or die('Wrong URL.');
 

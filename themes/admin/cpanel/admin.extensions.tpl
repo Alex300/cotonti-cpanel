@@ -304,7 +304,7 @@
 				<td colspan="5">{ADMIN_EXTENSIONS_ERROR_MSG}</td>
 			</tr>
             <!-- END: ROW_ERROR_EXT -->
-			<tr>
+			<tr class="{ADMIN_EXTENSIONS_ODDEVEN}">
 				<td>
 					<!-- IF {ADMIN_EXTENSIONS_ICO} -->
 					<img src="{ADMIN_EXTENSIONS_ICO}" />

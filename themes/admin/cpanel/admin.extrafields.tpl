@@ -6,8 +6,15 @@
     <div class="panel-body">
         <table class="table table-hover">
             <!-- BEGIN: ROW -->
-            <tr>
-                <td><a href="{ADMIN_EXTRAFIELDS_ROW_TABLEURL}">{ADMIN_EXTRAFIELDS_ROW_TABLENAME}</a></td>
+            <tr class="{ADMIN_EXTRAFIELDS_ODDEVEN}">
+                <td class="width5">
+                    <!-- IF {ADMIN_EXTRAFIELDS_ROW_ICO} -->
+                    <img src="{ADMIN_EXTRAFIELDS_ROW_ICO}" />
+                    <!-- ENDIF -->
+                </td>
+                <td>
+                    <a href="{ADMIN_EXTRAFIELDS_ROW_TABLEURL}">{ADMIN_EXTRAFIELDS_ROW_TABLENAME}</a>
+                </td>
             </tr>
             <!-- END: ROW -->
         </table>
