@@ -11,7 +11,8 @@ if(cot_plugin_active('comments')) require_once cot_incfile('comments', 'plug');
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
  * @copyright © Portal30 Studio http://portal30.ru
  */
-class cpanel_MainController{
+class cpanel_MainController
+{
 
     public function indexAction(){
         global $usr, $db_plugins, $db_updates, $db, $cache, $db_stats, $db_users, $db_groups_users, $db_pages, $db_forum_topics,
@@ -28,6 +29,7 @@ class cpanel_MainController{
         $t = new XTemplate($tpl);
 
         //Version Checking
+        $update_info = null;
         if (cot::$cfg['check_updates'] && cot::$cache) {
             $update_info = cot::$cache->db->get('update_info');
             if (!$update_info) {
@@ -49,7 +51,7 @@ class cpanel_MainController{
                     curl_close($curl);
                 }
             }
-            if ($update_info['update_ver'] > cot::$cfg['version']) {
+            if (!empty($update_info) && $update_info['update_ver'] > cot::$cfg['version']) {
                 $t->assign(array(
                     'ADMIN_HOME_UPDATE_REVISION' => sprintf(cot::$L['home_update_revision'], cot::$cfg['version'],
                         htmlspecialchars($update_info['update_ver'])),
