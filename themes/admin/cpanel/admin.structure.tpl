@@ -283,6 +283,7 @@
     $('#addstructureSubmit').click(function(){
         $('#addstructureModal').modal('hide');
         $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
     });
 </script>
 <!-- END: NEWCAT -->
