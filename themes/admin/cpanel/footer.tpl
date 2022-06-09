@@ -13,7 +13,7 @@
         <p>
             {PHP.out.copyright} {PHP.cfg.version}
             &nbsp; | &nbsp;
-            <a href="https://lily-software.com/sozdanie-internet-sajtov/free-scripts/cpanel" target="_blank">Admin theme «cPanel»</a>
+            <a href="https://lily-software.com/free-scripts/cpanel" target="_blank">Admin theme «cPanel»</a>
             {PHP.cot_modules.cpanel.version}
         </p>
     </div>
