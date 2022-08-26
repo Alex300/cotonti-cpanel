@@ -17,8 +17,12 @@ Order=5
  */
 defined('COT_CODE') or die('Wrong URL');
 
-if (!COT_AJAX && defined('COT_ADMIN') && cot::$cfg['admintheme'] == 'cpanel') {
-
+if (
+    !COT_AJAX &&
+    defined('COT_ADMIN') &&
+    isset(cot::$cfg['admintheme']) &&
+    cot::$cfg['admintheme'] == 'cpanel'
+) {
     require_once cot_incfile('cpanel', 'module');
 
     // System menus

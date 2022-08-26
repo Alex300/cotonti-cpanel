@@ -16,14 +16,19 @@ Order=50
  */
 defined('COT_CODE') or die('Wrong URL');
 
-if (!COT_AJAX && defined('COT_ADMIN') && cot::$cfg['admintheme'] == 'cpanel'){
+if (
+    !COT_AJAX &&
+    defined('COT_ADMIN') &&
+    isset(cot::$cfg['admintheme']) &&
+    cot::$cfg['admintheme'] == 'cpanel'
+) {
 
     $user_avatar = cot_rc('user_default_avatar');
-    if(cot_module_active('files')){
+    if (cot_module_active('files')) {
         require_once cot_incfile('files', 'module');
         $user_avatar = cot_files_user_avatar(cot::$usr['profile']['user_avatar'], cot::$usr['profile']['user_avatar']);
 
-    } elseif(cot_plugin_active('userimages')) {
+    } elseif (cot_plugin_active('userimages')) {
         require_once cot_incfile('userimages', 'plug');
         $user_avatar = cot_userimages_build(cot::$usr['profile']['user_avatar'], 'avatar');
     }

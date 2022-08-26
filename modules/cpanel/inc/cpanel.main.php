@@ -13,8 +13,9 @@ if(cot_plugin_active('comments')) require_once cot_incfile('comments', 'plug');
  */
 class cpanel_MainController
 {
-
-    public function indexAction(){
+    public function indexAction()
+    {
+        // These globals may be needed for plugins
         global $usr, $db_plugins, $db_updates, $db, $cache, $db_stats, $db_users, $db_groups_users, $db_pages, $db_forum_topics,
                $db_forum_posts, $db_pm, $L, $sys, $cfg, $db_logger, $db_referers, $db_trash, $db_com;
 
@@ -29,33 +30,47 @@ class cpanel_MainController
         $t = new XTemplate($tpl);
 
         //Version Checking
-        $update_info = null;
         if (cot::$cfg['check_updates'] && cot::$cache) {
-            $update_info = cot::$cache->db->get('update_info');
-            if (!$update_info) {
+            $updateInfo = cot::$cache->db->get('update_info');
+            if (empty($updateInfo)) {
+                $url = 'https://www.cotonti.com/?r=updatecheck';
+                // $url = 'https://www.cotonti.com/update-check';
+                $userAgent = 'Cotonti v.' . cot::$cfg['version'];
                 if (ini_get('allow_url_fopen')) {
-                    $update_info = @file_get_contents('http://www.cotonti.com/update-check');
-                    if ($update_info) {
-                        $update_info = json_decode($update_info, TRUE);
-                        cot::$cache->db->store('update_info', $update_info, COT_DEFAULT_REALM, 86400);
-                    }
+                    $updateInfo = @file_get_contents($url, false, stream_context_create([
+                            'http' => ['method'=>"GET", 'header' => 'User-Agent: ' . $userAgent]
+                        ])
+                    );
                 } elseif (function_exists('curl_init')) {
                     $curl = curl_init();
-                    curl_setopt($curl, CURLOPT_URL, 'http://www.cotonti.com/update-check');
+                    curl_setopt($curl, CURLOPT_URL, $url);
+                    curl_setopt($curl, CURLOPT_USERAGENT, $userAgent);
                     curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-                    $update_info = curl_exec($curl);
-                    if ($update_info) {
-                        $update_info = json_decode($update_info, TRUE);
-                        cot::$cache->db->store('update_info', $update_info, COT_DEFAULT_REALM, 86400);
-                    }
+                    $updateInfo = curl_exec($curl);
                     curl_close($curl);
                 }
+
+                if ($updateInfo) {
+                    $updateInfo = json_decode($updateInfo, TRUE);
+                }
+                if (empty($updateInfo)) {
+                    // Negative result should be cached too
+                    $updateInfo = 'a';
+                }
+                cot::$cache->db->store('update_info', $updateInfo, COT_DEFAULT_REALM, 86400);
             }
-            if (!empty($update_info) && $update_info['update_ver'] > cot::$cfg['version']) {
+            if (
+                !empty($updateInfo) &&
+                $updateInfo != 'a' &&
+                version_compare($updateInfo['update_ver'], cot::$cfg['version'], '>')
+            ) {
                 $t->assign(array(
-                    'ADMIN_HOME_UPDATE_REVISION' => sprintf(cot::$L['home_update_revision'], cot::$cfg['version'],
-                        htmlspecialchars($update_info['update_ver'])),
-                    'ADMIN_HOME_UPDATE_MESSAGE' => cot_parse($update_info['update_message']),
+                    'ADMIN_HOME_UPDATE_REVISION' => sprintf(
+                        cot::$L['home_update_revision'],
+                        cot::$cfg['version'],
+                        htmlspecialchars($updateInfo['update_ver'])
+                    ),
+                    'ADMIN_HOME_UPDATE_MESSAGE' => cot_parse($updateInfo['update_message']),
                 ));
                 $t->parse('MAIN.UPDATE');
             }
