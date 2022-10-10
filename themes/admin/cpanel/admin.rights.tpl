@@ -2,6 +2,7 @@
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
 
 <form name="saverights" id="saverights" action="{ADMIN_RIGHTS_FORM_URL}" method="post" class="ajax form-inline">
+	{ADMIN_RIGHTS_FORM_ITEMS}
 	<!-- IF {PHP.g} > 5 -->
 	<div class="marginbottom10">
 		<div class="checkbox">
@@ -52,14 +53,14 @@
 					<td><a href="{ADMIN_RIGHTS_ROW_LINK}">{ADMIN_RIGHTS_ROW_TITLE}</a></td>
 					<!-- BEGIN: RIGHTS_ROW_ITEMS -->
 					<td class="text-center">
-						<!-- IF {PHP.out.tpl_rights_parseline_locked} AND {PHP.out.tpl_rights_parseline_state} -->
+						<!-- IF {ADMIN_RIGHTS_ROW_ITEMS_LOCKED} AND {ADMIN_RIGHTS_ROW_ITEMS_STATE} -->
 						<input type="hidden" name="{ADMIN_RIGHTS_ROW_ITEMS_NAME}" value="1" />
 						{PHP.R.admin_icon_discheck1}
 						<!-- ENDIF -->
-						<!-- IF {PHP.out.tpl_rights_parseline_locked} AND !{PHP.out.tpl_rights_parseline_state} -->
+						<!-- IF {ADMIN_RIGHTS_ROW_ITEMS_LOCKED} AND !{ADMIN_RIGHTS_ROW_ITEMS_STATE} -->
 						{PHP.R.admin_icon_discheck0}
 						<!-- ENDIF -->
-						<!-- IF !{PHP.out.tpl_rights_parseline_locked} -->
+						<!-- IF !{ADMIN_RIGHTS_ROW_ITEMS_LOCKED} -->
 						<input type="checkbox" class="checkbox" name="{ADMIN_RIGHTS_ROW_ITEMS_NAME}"{ADMIN_RIGHTS_ROW_ITEMS_CHECKED}{ADMIN_RIGHTS_ROW_ITEMS_DISABLED} />
 						<!-- ENDIF -->
 					</td>

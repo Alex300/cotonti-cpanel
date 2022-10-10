@@ -3,6 +3,7 @@
 
 <form name="saverightsbyitem" id="saverightsbyitem" action="{ADMIN_RIGHTSBYITEM_FORM_URL}" method="post"
 	  class="ajax form-inline">
+	{ADMIN_RIGHTSBYITEM_FORM_ITEMS}
 	<table class="table">
 		<tr>
 			<td class="width5" rowspan="2"></td>
@@ -31,11 +32,13 @@
 			<td><a href="{ADMIN_RIGHTSBYITEM_ROW_LINK}">{ADMIN_RIGHTSBYITEM_ROW_TITLE}</a></td>
 			<!-- BEGIN: ROW_ITEMS -->
 			<td class="text-center">
-				<!-- IF {PHP.out.tpl_rights_parseline_locked} AND {PHP.out.tpl_rights_parseline_state} -->
+				<!-- IF {ADMIN_RIGHTSBYITEM_ROW_ITEMS_LOCKED} AND {ADMIN_RIGHTSBYITEM_ROW_ITEMS_STATEe} -->
 				<input type="hidden" name="{ADMIN_RIGHTSBYITEM_ROW_ITEMS_NAME}" value="1" /> {PHP.R.admin_icon_discheck1}
 				<!-- ENDIF -->
-				<!-- IF {PHP.out.tpl_rights_parseline_locked} AND !{PHP.out.tpl_rights_parseline_state} -->{PHP.R.admin_icon_discheck0}<!-- ENDIF -->
-				<!-- IF !{PHP.out.tpl_rights_parseline_locked} -->
+				<!-- IF {ADMIN_RIGHTSBYITEM_ROW_ITEMS_LOCKED} AND !{ADMIN_RIGHTSBYITEM_ROW_ITEMS_STATE} -->
+					{PHP.R.admin_icon_discheck0}
+				<!-- ENDIF -->
+				<!-- IF !{ADMIN_RIGHTSBYITEM_ROW_ITEMS_LOCKED} -->
 				<input type="checkbox" class="checkbox" name="{ADMIN_RIGHTSBYITEM_ROW_ITEMS_NAME}"{ADMIN_RIGHTSBYITEM_ROW_ITEMS_CHECKED}{ADMIN_RIGHTSBYITEM_ROW_ITEMS_DISABLED} />
 				<!-- ENDIF -->
 			</td>
