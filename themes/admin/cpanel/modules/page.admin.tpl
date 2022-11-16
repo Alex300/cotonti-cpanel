@@ -1,17 +1,5 @@
 <!-- BEGIN: MAIN -->
-<script type="text/javascript">
-$(document).ready(function()
-{
-	$('.moreinfo').hide();
-	$(".mor_info_on_off").click(function()
-	{
-		var kk = $(this).attr('id');
-		$('#'+kk).children('.moreinfo').slideToggle(100);
-	});
-});
-</script>
 {FILE "{PHP.cfg.themes_dir}/admin/cpanel/warnings.tpl"}
-
 <div class="button-toolbar">
 	<a href="{ADMIN_PAGE_URL_CONFIG}" class="btn btn-default" title="{PHP.L.Configuration}"
 	   data-toggle="tooltip"><span class="fa fa-wrench"></span> {PHP.L.Configuration}</a>
@@ -26,23 +14,28 @@ $(document).ready(function()
 		<h4 class="panel-title">{PHP.L.Pages} ({ADMIN_PAGE_TOTALDBPAGES})</h4>
 	</div>
 	<div class="panel-body">
-		<form id="form_valqueue" name="form_valqueue" method="post" action="{ADMIN_PAGE_FORM_URL}">
-			<input type="hidden" name="paction" value="" />
-			<div class="form-inline">
-				<!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->
-				<div class="form-group">
-					<label>{PHP.L.adm_sort}</label> {ADMIN_PAGE_ORDER} {ADMIN_PAGE_WAY}
-				</div>
+
+		<div class="button-toolbar block">
+			<form name="form_valqueue" method="get" action="{PHP|cot_url('admin', 'm=page')}">
+				<!-- IF !{PHP|cot_plugin_active('urleditor')} OR {PHP.cfg.plugin.urleditor.preset} != 'handy' -->
+				<input type="hidden" name="m" value="page" />
 				<!-- ENDIF -->
-				<div class="form-group marginleft10">
-					<label>{PHP.L.Show}:</label> {ADMIN_PAGE_FILTER}
+				<div class="form-inline">
+					<!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->
+					<div class="form-group">
+						<label>{PHP.L.adm_sort}</label> {ADMIN_PAGE_ORDER} {ADMIN_PAGE_WAY}
+					</div>
+					<!-- ENDIF -->
+					<div class="form-group marginleft10">
+						<label>{PHP.L.Show}:</label> {ADMIN_PAGE_FILTER}
+					</div>
+
+					<button type="submit" class="btn btn-default"><span class="fa fa-filter"></span> {PHP.L.Filter}</button>
 				</div>
+			</form>
+		</div>
 
-				<button name="paction" value="{PHP.L.Filter}" type="submit" class="btn btn-default" onclick="this.form.paction.value='{PHP.L.Filter}'">
-					<span class="fa fa-filter"></span> {PHP.L.Filter}
-				</button>
-			</div>
-
+		<form id="form_valqueue" name="form_valqueue" method="post" action="{ADMIN_PAGE_FORM_URL}">
 			<table class="table margintop20">
 				<thead>
 					<tr>
@@ -115,12 +108,12 @@ $(document).ready(function()
 				<tr>
 					<td colspan="4">
 						<!-- IF {PHP.filter} != {PHP.L.adm_validated} -->
-						<button type="submit" class="btn btn-info" name="paction" value="{PHP.L.Validate}"
-								onclick="this.form.paction.value='{PHP.L.Validate}'"><span class="fa fa-check-circle-o"></span> {PHP.L.Validate}</button>
+						<button name="paction" type="submit" value="validate" class="btn btn-info confirm">
+							<span class="fa fa-check-circle-o"></span> {PHP.L.Validate}</button>
 						<!-- ENDIF -->
 
-						<button type="submit" class="btn btn-danger" name="paction" value="{PHP.L.Delete}"
-								onclick="this.form.paction.value='{PHP.L.Delete}'"><span class="fa fa-trash-o"></span> {PHP.L.Delete}</button>
+						<button name="paction" type="submit" value="delete" class="btn btn-danger confirm">
+							<span class="fa fa-trash-o"></span> {PHP.L.Delete}</button>
 					</td>
 				</tr>
 				<!-- ENDIF -->
@@ -139,4 +132,38 @@ $(document).ready(function()
 		<!-- ENDIF -->
 	</div>
 </div>
+<script type="text/javascript">
+	$('.moreinfo').hide();
+	$('.mor_info_on_off').click(function() {
+		let kk = $(this).attr('id');
+		$('#' + kk).children('.moreinfo').slideToggle(100);
+	});
+
+	let submitButtons = document.querySelectorAll('.confirm');
+	let form = document.getElementById('form_valqueue');
+	submitButtons.forEach(function(elem) {
+		elem.addEventListener('click', function(e) {
+			let checkedCnt = form.querySelectorAll('input[type=checkbox]:checked').length;
+			if (checkedCnt < 1) {
+				e.preventDefault();
+				return false;
+			}
+
+			let message = 'Are you sure?';
+			switch(this.value) {
+				case 'delete':
+					message = '{PHP.L.page_confirm_delete}';
+					break;
+
+				case 'validate':
+					message = '{PHP.L.page_confirm_validate}';
+					break;
+			}
+
+			if (!confirm(message)) {
+				e.preventDefault();
+			}
+		});
+	});
+</script>
 <!-- END: MAIN -->

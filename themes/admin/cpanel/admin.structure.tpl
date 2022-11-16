@@ -173,7 +173,7 @@
                     <a title="{PHP.L.Rights}" href="{ADMIN_STRUCTURE_RIGHTS_URL}" class="btn btn-info btn-sm"><span class="fa fa-users"></span>
                         {PHP.L.short_rights}</a>
                     <!-- ENDIF -->
-                    <!-- IF {PHP.dozvil} -->
+                    <!-- IF {ADMIN_STRUCTURE_CAN_DELETE} -->
                     <a title="{PHP.L.Delete}" href="{ADMIN_STRUCTURE_UPDATE_DEL_URL}" class="confirmLink btn btn-danger
                         btn-sm"><span class="fa fa-trash-o"></span> {PHP.L.short_delete}</a>
                     <!-- ENDIF -->
