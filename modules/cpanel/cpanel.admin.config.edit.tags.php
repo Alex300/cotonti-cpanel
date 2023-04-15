@@ -14,19 +14,20 @@ Hooks=admin.config.edit.tags
  */
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
-$configTitle = '';
-if ($o == 'core') {
-    $configTitle = cot::$L['core_' . $p];
+if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
+    $configTitle = '';
+    if ($o == 'core') {
+        $configTitle = Cot::$L['core_' . $p];
+    } else {
+        $configTitle = $ext_info['name'];
+    }
 
-} else {
-    $configTitle = $ext_info['name'];
+    cpanel::$panelTitle = $configTitle;
+
+    $admintitle = !empty($adminsubtitle) ? $adminsubtitle : Cot::$L['Configuration'];
+    $adminsubtitle = cpanel::$panelTitle;
+
+    $t->assign(array(
+        'ADMIN_CONFIG_EDIT_TITLE' => $configTitle,
+    ));
 }
-
-cpanel::$panelTitle = $configTitle;
-
-$admintitle = !empty($adminsubtitle) ? $adminsubtitle: cot::$L['Configuration'];
-$adminsubtitle = cpanel::$panelTitle;
-
-$t->assign(array(
-    'ADMIN_CONFIG_EDIT_TITLE' => $configTitle,
-));

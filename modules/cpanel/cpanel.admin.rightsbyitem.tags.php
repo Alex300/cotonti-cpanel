@@ -16,24 +16,24 @@ Hooks=admin.rightsbyitem.tags
 
 global $cot_groups, $cot_modules;
 
-$admintitle = !empty($adminsubtitle) ? $adminsubtitle: cot::$L['Rights'];
+$admintitle = !empty($adminsubtitle) ? $adminsubtitle: Cot::$L['Rights'];
 $adminsubtitle = '';
 if(!empty($g) && !empty($cot_groups[$g])) {
     $adminsubtitle = $cot_groups[$g]['name'];
 }
 
 if($ic == 'message' || $ic == 'admin') {
-    $adminsubtitle =  cot::$L['adm_code'][$ic];
+    $adminsubtitle =  Cot::$L['adm_code'][$ic];
 
 } elseif($ic == 'plug')  {
     if(isset($cot_plugins_enabled[$io])) $adminsubtitle = $cot_plugins_enabled[$io]['title'];
 
 } elseif($ic == 'structure') {
-    $adminsubtitle = cot::$L['Structure'];
+    $adminsubtitle = Cot::$L['Structure'];
 
 } else {
-    if(isset($io) && $io != 'a' && isset(cot::$structure[$ic][$io])) {
-        $adminsubtitle = cot::$structure[$ic][$io]['title'];
+    if(isset($io) && $io != 'a' && isset(Cot::$structure[$ic][$io])) {
+        $adminsubtitle = Cot::$structure[$ic][$io]['title'];
 
     } elseif(isset($cot_modules[$ic])) {
         $adminsubtitle = $cot_modules[$ic]['title'];

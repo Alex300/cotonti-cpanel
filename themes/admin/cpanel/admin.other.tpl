@@ -8,38 +8,45 @@
 			<div class="panel-body">
 				<table class="table table-hover margin0">
 					<tr>
-						<td class="centerall"><img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/></td>
+						<td class="centerall">{PHP.R.admin_icon_core}</td>
 						<td>
 							<div class="strong"><a href="{ADMIN_OTHER_URL_CACHE}">{PHP.L.adm_internalcache}</a></div>
 							<div class="help-block margin0">{PHP.L.adm_internalcache_desc}</div>
 						</td>
 					</tr>
 					<tr>
-						<td class="centerall"><img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/></td>
+						<td class="centerall">{PHP.R.admin_icon_core}</td>
 						<td>
 							<div class="strong"><a href="{ADMIN_OTHER_URL_DISKCACHE}">{PHP.L.adm_diskcache}</a></div>
 							<div class="help-block margin0">{PHP.L.adm_diskcache_desc}</div>
 						</td>
 					</tr>
 					<tr>
-						<td class="centerall"><img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/></td>
+						<td class="centerall">{PHP.R.admin_icon_core}</td>
 						<td>
 							<div class="strong"><a href="{ADMIN_OTHER_URL_EXFLDS}">{PHP.L.adm_extrafields}</a></div>
 							<div class="help-block margin0">{PHP.L.adm_extrafields_desc}</div>
 						</td>
 					</tr>
 					<tr>
-						<td class="centerall"><img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/></td>
+						<td class="centerall">{PHP.R.icon_cfg_info}</td>
 						<td>
 							<div class="strong"><a href="{ADMIN_OTHER_URL_LOG}">{PHP.L.adm_log}</a></div>
 							<div class="help-block margin0">{PHP.L.adm_log_desc}</div>
 						</td>
 					</tr>
 					<tr>
-						<td class="centerall"><img src="{PHP.cfg.system_dir}/admin/img/cfg_info.png"/></td>
+						<td class="centerall">{PHP.R.icon_cfg_info}</td>
 						<td>
 							<div class="strong"><a href="{ADMIN_OTHER_URL_INFOS}">{PHP.L.adm_infos}</a></div>
 							<div class="help-block margin0">{PHP.L.adm_infos_desc}</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="centerall">{PHP.R.icon_cfg_info}</td>
+						<td>
+							<div class="strong"><a href="{ADMIN_OTHER_URL_PHPINFO}">{PHP.L.adm_phpinfo}</a></div>
+							<div class="help-block margin0">{PHP.L.adm_phpinfo_desc}</div>
 						</td>
 					</tr>
 				</table>

@@ -27,7 +27,7 @@ list($usr['auth_read'], $usr['auth_write'], $usr['isadmin']) = cot_auth('admin',
 cot_block($usr['auth_read']);
 
 if(empty($out['head'])) $out['head'] = '';
-cot::$out['head'] .= $R['code_noindex'];
+Cot::$out['head'] .= $R['code_noindex'];
 
 $controllerFile = cot_incfile($env['ext'], $env['type'], $m);
 

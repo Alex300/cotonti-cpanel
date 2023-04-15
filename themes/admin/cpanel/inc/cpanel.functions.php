@@ -19,7 +19,7 @@ if(!function_exists('cot_formGroupClass')) {
     {
         global $currentMessages;
 
-        if (!cot::$cfg['msg_separate']) return '';
+        if (!Cot::$cfg['msg_separate']) return '';
 
         $error = '';
         $error .= cot_implode_messages($name, 'error');

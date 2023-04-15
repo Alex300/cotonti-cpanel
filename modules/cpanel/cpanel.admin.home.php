@@ -10,15 +10,14 @@ Hooks=admin.home
  * @package Cotonti
  * @subpackage  Admin
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
  */
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
 // Redirect to cpanel module
 if (
-    isset(cot::$cfg['admintheme']) &&
-    cot::$cfg['admintheme'] == 'cpanel' &&
-    basename($_SERVER['PHP_SELF']) == 'admin.php'
+    isset(Cot::$cfg['admintheme'])
+    && Cot::$cfg['admintheme'] == 'cpanel'
+    && basename($_SERVER['PHP_SELF']) == 'admin.php'
 ) {
     cot_redirect(cot_url('cpanel'));
 }

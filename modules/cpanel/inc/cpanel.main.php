@@ -21,21 +21,21 @@ class cpanel_MainController
 
         $tpl = cot_tplfile(array('cpanel', 'admin', 'index'));
 
-        if (!cot::$cfg['debug_mode'] && file_exists('install.php') && is_writable('datas/config.php')){
+        if (!Cot::$cfg['debug_mode'] && file_exists('install.php') && is_writable('datas/config.php')){
             cot_error('home_installable_error');
         }
 
-        cot::$out['subtitle'] = cot::$L['Administration'];
+        Cot::$out['subtitle'] = Cot::$L['Administration'];
 
         $t = new XTemplate($tpl);
 
         //Version Checking
-        if (cot::$cfg['check_updates'] && cot::$cache) {
-            $updateInfo = cot::$cache->db->get('update_info');
+        if (Cot::$cfg['check_updates'] && Cot::$cache) {
+            $updateInfo = Cot::$cache->db->get('update_info');
             if (empty($updateInfo)) {
                 $url = 'https://www.cotonti.com/?r=updatecheck';
                 // $url = 'https://www.cotonti.com/update-check';
-                $userAgent = 'Cotonti v.' . cot::$cfg['version'];
+                $userAgent = 'Cotonti v.' . Cot::$cfg['version'];
                 if (ini_get('allow_url_fopen')) {
                     $updateInfo = @file_get_contents($url, false, stream_context_create([
                             'http' => ['method'=>"GET", 'header' => 'User-Agent: ' . $userAgent]
@@ -59,17 +59,17 @@ class cpanel_MainController
                     // Negative result should be cached too
                     $updateInfo = 'a';
                 }
-                cot::$cache->db->store('update_info', $updateInfo, COT_DEFAULT_REALM, 86400);
+                Cot::$cache->db->store('update_info', $updateInfo, COT_DEFAULT_REALM, 86400);
             }
             if (
                 !empty($updateInfo) &&
                 $updateInfo != 'a' &&
-                version_compare($updateInfo['update_ver'], cot::$cfg['version'], '>')
+                version_compare($updateInfo['update_ver'], Cot::$cfg['version'], '>')
             ) {
                 $t->assign(array(
                     'ADMIN_HOME_UPDATE_REVISION' => sprintf(
-                        cot::$L['home_update_revision'],
-                        cot::$cfg['version'],
+                        Cot::$L['home_update_revision'],
+                        Cot::$cfg['version'],
                         htmlspecialchars($updateInfo['update_ver'])
                     ),
                     'ADMIN_HOME_UPDATE_MESSAGE' => cot_parse($updateInfo['update_message']),
@@ -78,10 +78,10 @@ class cpanel_MainController
             }
         }
 
-        $sql = cot::$db->query("SHOW TABLES");
+        $sql = Cot::$db->query("SHOW TABLES");
         foreach ($sql->fetchAll(PDO::FETCH_NUM) as $row) {
             $table_name = $row[0];
-            $status = cot::$db->query("SHOW TABLE STATUS LIKE '$table_name'");
+            $status = Cot::$db->query("SHOW TABLE STATUS LIKE '$table_name'");
             $status1 = $status->fetch();
             $status->closeCursor();
             $tables[] = $status1;
@@ -99,8 +99,8 @@ class cpanel_MainController
             $total_data_length += $dat['Data_length'];
         }
 
-        $totalplugins = cot::$db->query("SELECT DISTINCT(pl_code) FROM $db_plugins WHERE 1 GROUP BY pl_code")->rowCount();
-        $totalhooks = cot::$db->query("SELECT COUNT(*) FROM $db_plugins")->fetchColumn();
+        $totalplugins = Cot::$db->query("SELECT DISTINCT(pl_code) FROM $db_plugins WHERE 1 GROUP BY pl_code")->rowCount();
+        $totalhooks = Cot::$db->query("SELECT COUNT(*) FROM $db_plugins")->fetchColumn();
 
         $t->assign(array(
             'ADMIN_HOME_DB_TOTAL_ROWS' => $total_rows,
@@ -109,10 +109,10 @@ class cpanel_MainController
             'ADMIN_HOME_DB_TOTALSIZE' => number_format(($total_length / 1024), 1, '.', ' '),
             'ADMIN_HOME_TOTALPLUGINS' => $totalplugins,
             'ADMIN_HOME_TOTALHOOKS' => $totalhooks,
-            'ADMIN_HOME_VERSION' => cot::$cfg['version'],
-            'ADMIN_HOME_DB_VERSION' => htmlspecialchars(cot::$db->query("SELECT upd_value FROM $db_updates WHERE upd_param = 'revision'")->fetchColumn()),
+            'ADMIN_HOME_VERSION' => Cot::$cfg['version'],
+            'ADMIN_HOME_DB_VERSION' => htmlspecialchars(Cot::$db->query("SELECT upd_value FROM $db_updates WHERE upd_param = 'revision'")->fetchColumn()),
 
-            'ADMIN_TITLE' => cot::$L['Main'],
+            'ADMIN_TITLE' => Cot::$L['Main'],
         ));
 
         /* === Hook === */
@@ -154,18 +154,5 @@ class cpanel_MainController
         $t->parse();
         return $t->text();
 
-    }
-
-    public function phpinfoAction(){
-
-        cot::$out['subtitle'] = 'php info - '.cot::$L['Administration'];
-
-        ob_start();
-        ob_implicit_flush(false);
-        phpinfo();
-
-        Resources::linkFileFooter(cot::$cfg['themes_dir'].'/admin/cpanel/css/phpinfo.css');
-
-        return '<div id="php-info">'.ob_get_clean().'</div>';
     }
 }

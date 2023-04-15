@@ -56,14 +56,7 @@
         <div class="row">
             <!-- BEGIN: ADMIN_CONFIG_ROW -->
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 margintop10 marginbottom10">
-                <a href="{ADMIN_CONFIG_ROW_URL}" class="ajax thumbicons">
-                    <!-- IF {ADMIN_CONFIG_ROW_ICO} -->
-                    <img src="{ADMIN_CONFIG_ROW_ICO}"/>
-                    <!-- ELSE -->
-                    <img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/>
-                    <!-- ENDIF -->
-                    {ADMIN_CONFIG_ROW_NAME}
-                </a>
+                <a href="{ADMIN_CONFIG_ROW_URL}" class="ajax">{ADMIN_CONFIG_ROW_ICON} {ADMIN_CONFIG_ROW_NAME}</a>
             </div>
             <!-- END: ADMIN_CONFIG_ROW -->
         </div>

@@ -1244,6 +1244,12 @@ select[name$="[month]"] {
 select[name$="[year]"] {
     max-width: 82px;
 }
+
+#phpinfo > div {
+    margin: 0 auto;
+    width: 70%;
+}
+
 /* === /Miscellaneous === */
 
 

@@ -16,7 +16,7 @@ Hooks=admin.rights.tags
 
 global $cot_groups;
 
-$admintitle = !empty($adminsubtitle) ? $adminsubtitle: cot::$L['Rights'];
+$admintitle = !empty($adminsubtitle) ? $adminsubtitle: Cot::$L['Rights'];
 $adminsubtitle = '';
 if(!empty($g) && !empty($cot_groups[$g])) {
     $adminsubtitle = $cot_groups[$g]['name'];
