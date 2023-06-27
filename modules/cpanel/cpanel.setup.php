@@ -4,8 +4,8 @@
 Code=cpanel
 Name=Admin Control Panel
 Description=Admin Control Panel module for Cpanel admin theme
-Version=0.0.5
-Date=2023-04-14
+Version=0.0.6
+Date=2023-06-26
 Author=Kalnov Alexey <kalnovalexey@yandex.ru>
 Copyright=Copyright (c) 2014-2023 Lily Software https://lily-software.com (ex. Portal30 Studio)
 Auth_guests=
@@ -21,8 +21,7 @@ Lock_members=
 /**
  * Cpanel Module
  *
- * @package Cotonti
- * @subpackage  Admin
+ * @package Cpanel
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
  * @copyright © 2014-2023 Lily Software https://lily-software.com (ex. Portal30 Studio)
  */

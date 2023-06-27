@@ -22,10 +22,10 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
         $configTitle = $ext_info['name'];
     }
 
-    cpanel::$panelTitle = $configTitle;
+    CPanel::$panelTitle = $configTitle;
 
     $admintitle = !empty($adminsubtitle) ? $adminsubtitle : Cot::$L['Configuration'];
-    $adminsubtitle = cpanel::$panelTitle;
+    $adminsubtitle = CPanel::$panelTitle;
 
     $t->assign(array(
         'ADMIN_CONFIG_EDIT_TITLE' => $configTitle,

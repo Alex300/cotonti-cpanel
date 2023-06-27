@@ -47,9 +47,9 @@ if (
     }
 
     $t->assign(array (
-        'HEADER_MENU_TOP'   => cot_renderMenu('admin.menu.top',  cpanel::$menu['top'],  1),
-        'HEADER_MENU_SIDE'  => cot_renderMenu('admin.menu.side', cpanel::$menu['side'], 1),
-        'HEADER_MENU_USER'  => cot_renderMenu('admin.menu.user', cpanel::$menu['user'], 1),
+        'HEADER_MENU_TOP'   => cot_renderMenu('admin.menu.top',  CPanel::$menu['top'],  1),
+        'HEADER_MENU_SIDE'  => cot_renderMenu('admin.menu.side', CPanel::$menu['side'], 1),
+        'HEADER_MENU_USER'  => cot_renderMenu('admin.menu.user', CPanel::$menu['user'], 1),
         'HEADER_NOTICES_COUNT' => (!empty(Cot::$out['notices_array'])) ? count(Cot::$out['notices_array']) : 0,
         'HEADER_USER_AVATAR' => $user_avatar,
         'HEADER_USER_FULL_NAME' => htmlspecialchars(cot_user_full_name(Cot::$usr['profile'])),

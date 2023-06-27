@@ -10,13 +10,19 @@
  */
 defined('COT_CODE') or die('Wrong URL.');
 
-if(Resources::getAlias('@bootstrap.js') === null) Resources::setAlias('@bootstrap.js', 'lib/bootstrap/js/bootstrap.min.js');
-if(Resources::getAlias('@bootstrap.css') === null) Resources::setAlias('@bootstrap.css', 'lib/bootstrap/css/bootstrap.min.css');
-if(Resources::getAlias('@bootstrapTheme.css') === null) {
+if (Resources::getAlias('@bootstrap.js') === null) {
+    Resources::setAlias('@bootstrap.js', 'lib/bootstrap/js/bootstrap.min.js');
+}
+if (Resources::getAlias('@bootstrap.css') === null) {
+    Resources::setAlias('@bootstrap.css', 'lib/bootstrap/css/bootstrap.min.css');
+}
+if (Resources::getAlias('@bootstrapTheme.css') === null) {
     Resources::setAlias('@bootstrapTheme.css', 'lib/bootstrap/css/bootstrap-theme.min.css');
 }
 
-if(Resources::getAlias('@fontAwesome.css') === null) Resources::setAlias('@fontAwesome.css', 'lib/font-awesome/css/font-awesome.min.css');
+if(Resources::getAlias('@fontAwesome.css') === null) {
+    Resources::setAlias('@fontAwesome.css', 'lib/font-awesome/css/font-awesome.min.css');
+}
 
 Resources::addFile('@bootstrap.css');
 Resources::addFile('@bootstrapTheme.css');
@@ -28,6 +34,6 @@ Resources::addFile('themes/admin/cpanel/css/typography.css', 'css', 200);
 
 
 Resources::linkFileFooter('@bootstrap.js');
-Resources::linkFileFooter(Cot::$cfg['themes_dir'].'/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js', 'js', 200);
-Resources::linkFileFooter(Cot::$cfg['themes_dir'].'/admin/cpanel/js/masonry.pkgd.min.js', 'js', 200);
-Resources::linkFileFooter(Cot::$cfg['themes_dir'].'/admin/cpanel/js/cpanel.js', 'js', 300);
+Resources::linkFileFooter(Cot::$cfg['themes_dir'] . '/admin/cpanel/js/slimscroll/jquery.slimscroll.min.js', 'js', 200);
+Resources::linkFileFooter(Cot::$cfg['themes_dir'] . '/admin/cpanel/js/masonry.pkgd.min.js', 'js', 200);
+Resources::linkFileFooter(Cot::$cfg['themes_dir'] . '/admin/cpanel/js/cpanel.js', 'js', 300);

@@ -2,14 +2,13 @@
 /**
  * Cpanel Module
  *
- * @package Cotonti
- * @subpackage  Admin
+ * @package Cpanel
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
+ * @copyright © Lily Software https://lily-software.com
  */
 defined('COT_CODE') or die('Wrong URL.');
 
-class cpanel
+class CPanel
 {
     /**
      * Panel for content will be created automatically

@@ -26,7 +26,7 @@ if (
     require_once cot_incfile('cpanel', 'module');
 
     // System menus
-    cpanel::$menu['top'] = array(
+    CPanel::$menu['top'] = array(
         'extensions' => array(
             'title' => Cot::$L['Extensions'],
             'url' => cot_url('admin', 'm=extensions'),
@@ -74,7 +74,7 @@ if (
         )
     );
 
-    cpanel::$menu['side'] = array(
+    CPanel::$menu['side'] = array(
         'home' => array(
             'title' => Cot::$L['Home'],
             'url' => cot_url('cpanel'),
@@ -201,7 +201,7 @@ if (
         ),
     );
 
-    cpanel::$menu['user'] = array(
+    CPanel::$menu['user'] = array(
         'my_page' => array(
             'title' => 'My page',
             'url' => cot_url('users', 'm=details'),

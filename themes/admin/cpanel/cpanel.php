@@ -10,7 +10,7 @@
  */
 defined('COT_CODE') or die('Wrong URL.');
 
-require_once Cot::$cfg['themes_dir'].'/admin/cpanel/inc/cpanel.functions.php';
+require_once Cot::$cfg['themes_dir'] . '/admin/cpanel/inc/cpanel.functions.php';
 
 $R['breadcrumbs_container'] = '<ol class="breadcrumb">{$crumbs}</ol>'."\n";
 $R['breadcrumbs_separator'] = "\n";
@@ -50,4 +50,4 @@ $R['link_pagenav_prev'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden=
 $R['link_pagenav_next'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_next'].'</span><span class="sr-only">Next</span></a></li>';
 $R['link_pagenav_last'] = '<li><a href="{$url}"{$event}{$rel}><span aria-hidden="true">'.$L['pagenav_last'].'</span><span class="sr-only">Last</span></a></li>';
 
-require_once Cot::$cfg['themes_dir'].'/admin/cpanel/cpanel.rc.php';
+require_once Cot::$cfg['themes_dir'] . '/admin/cpanel/cpanel.rc.php';

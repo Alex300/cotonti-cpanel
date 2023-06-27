@@ -60,9 +60,9 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
     if (
         ($m == 'config' && empty($o))
         || ($m == 'other' && empty($p))
-        || in_array($m, array('structure', 'extensions', 'users', 'cache', 'extrafields', 'rights'))
+        || in_array($m, ['structure', 'extensions', 'users', 'cache', 'extrafields', 'rights', 'infos'])
     ) {
-        cpanel::$useDefaultPanel = false;
+        CPanel::$useDefaultPanel = false;
     }
 
     // Cotonti extensions
@@ -73,21 +73,21 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
             && in_array($p, array('banlist', 'comments', 'contact', 'hits', 'ipsearch', 'referers', 'tags'))
         )
     ) {
-        cpanel::$useDefaultPanel = false;
+        CPanel::$useDefaultPanel = false;
     }
 
     // Thirty part extensions
     if (in_array($m, array('files'))  || ($m == 'other' && in_array($p, array('menugenerator', 'regioncity')))) {
-        cpanel::$useDefaultPanel = false;
+        CPanel::$useDefaultPanel = false;
     }
 
     $t->assign([
         'ADMIN_BREADCRUMBS' => $crumbs,
         'ADMIN_TITLE' => htmlspecialchars($adminTitle),
         'ADMIN_SUBTITLE' => $adminsubtitle,
-        'ADMIN_PANEL' => cpanel::$useDefaultPanel ? 1 : 0,
-        'ADMIN_PANEL_TITLE' => !empty(cpanel::$panelTitle) ?
-            htmlspecialchars(cpanel::$panelTitle) : htmlspecialchars($adminTitle),
+        'ADMIN_PANEL' => CPanel::$useDefaultPanel ? 1 : 0,
+        'ADMIN_PANEL_TITLE' => !empty(CPanel::$panelTitle) ?
+            htmlspecialchars(CPanel::$panelTitle) : htmlspecialchars($adminTitle),
     ]);
 }
 
