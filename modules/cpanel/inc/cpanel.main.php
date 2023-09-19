@@ -23,7 +23,7 @@ class cpanel_MainController
         $tpl = cot_tplfile(array('cpanel', 'admin', 'index'));
 
         if (!Cot::$cfg['debug_mode'] && file_exists('install.php') && is_writable('datas/config.php')){
-            cot_error('home_installable_error');
+            cot_error('home_remove_install');
         }
 
         Cot::$out['subtitle'] = Cot::$L['Administration'];
