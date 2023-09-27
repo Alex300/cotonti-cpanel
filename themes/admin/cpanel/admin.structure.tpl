@@ -77,10 +77,8 @@
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">{PHP.L.adm_tpl_mode}:</label>
-                            <div class="col-sm-10">
-                                {ADMIN_STRUCTURE_TPLMODE} {ADMIN_STRUCTURE_SELECT}<br />
-
-                                {PHP.L.adm_tpl_quickcat}: {ADMIN_STRUCTURE_TPLQUICK}
+                            <div class="col-sm-10 form-inline">
+                                {ADMIN_STRUCTURE_TPL}
                             </div>
                         </div>
 
@@ -118,7 +116,7 @@
                         <!-- BEGIN: ADMIN_CONFIG_ROW_OPTION -->
                         <div class="form-group">
                             <label class="col-sm-5 control-label">{ADMIN_CONFIG_ROW_CONFIG_TITLE}:</label>
-                            <div class="col-sm-5">
+                            <div class="col-sm-5<!-- IF {PHP.configRow.config_type} == 3 --> form-inline<!-- ENDIF -->">
                                 {ADMIN_CONFIG_ROW_CONFIG}
                                 <!-- IF {ADMIN_CONFIG_ROW_CONFIG_MORE} -->
                                 <div class="adminconfigmore">{ADMIN_CONFIG_ROW_CONFIG_MORE}</div>
@@ -142,6 +140,7 @@
 <!-- END: OPTIONS -->
 
 <!-- BEGIN: DEFAULT -->
+<!-- IF {ADMIN_STRUCTURE_TOTALITEMS} > 0 -->
 <div class="panel panel-default margintop20">
     <div class="panel-heading">
         <h4 class="panel-title">{PHP.L.editdeleteentries}</h4>
@@ -202,6 +201,7 @@
         <!-- ENDIF -->
     </div>
 </div>
+<!-- ENDIF -->
 <!-- END: DEFAULT -->
 
 <!-- BEGIN: NEWCAT -->
@@ -260,7 +260,14 @@
                             <div class="checkbox">{ADMIN_STRUCTURE_LOCKED}</div>
                         </div>
                     </div>
-
+                    <!-- IF {ADMIN_STRUCTURE_TPL} -->
+                    <div class="form-group form-inline">
+                        <label class="col-sm-2 control-label">{PHP.L.adm_tpl_mode}</label>
+                        <div class="col-sm-10">
+                            <div class="checkbox">{ADMIN_STRUCTURE_TPL}</div>
+                        </div>
+                    </div>
+                    <!-- ENDIF -->
                     <!-- BEGIN: EXTRAFLD -->
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{ADMIN_STRUCTURE_EXTRAFLD_TITLE}</label>
