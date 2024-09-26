@@ -59,18 +59,18 @@
 					</td>
 					<td class="{ADMIN_PAGE_ODDEVEN}">
 						<div id="mor_{PHP.ii}" class='mor_info_on_off'>
-							<span class="strong" style="cursor:pointer;">{ADMIN_PAGE_SHORTTITLE} <span class="caret"></span></span>
+							<span class="strong" style="cursor:pointer;">{ADMIN_PAGE_TITLE} <span class="caret"></span></span>
 							<div class="moreinfo">
 								<hr class="margintop10 marginbottom10" />
 								<table class="table-flat">
 									<tr>
 										<td class="width10">{PHP.L.Category}:</td>
-										<td>{ADMIN_PAGE_CATPATH_SHORT}</td>
+										<td>{ADMIN_PAGE_CAT_PATH_SHORT}</td>
 									</tr>
-									<!-- IF {ADMIN_PAGE_DESC} -->
+									<!-- IF {ADMIN_PAGE_DESCRIPTION} -->
 									<tr>
 										<td>{PHP.L.Description}:</td>
-										<td>{ADMIN_PAGE_DESC}</td>
+										<td>{ADMIN_PAGE_DESCRIPTION}</td>
 									</tr>
 									<!-- ENDIF -->
 									<!-- IF {ADMIN_PAGE_TEXT} -->
