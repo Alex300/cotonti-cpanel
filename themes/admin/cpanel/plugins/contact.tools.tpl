@@ -28,7 +28,7 @@
 						<td>{CONTACT_USER}<br />{CONTACT_EMAIL}</td>
 						<td style="overflow-x: hidden">{CONTACT_TEXTSHORT}</td>
 						<td class="text-right">
-							<a href="{CONTACT_VIEWLINK}" class="btn btn-primary" title="{PHP.L.short_open}"
+							<a href="{CONTACT_VIEWLINK}" class="btn btn-primary" title="{PHP.L.Open}"
 								data-toggle="tooltip"><span class="fa fa-folder-open-o"></span></a>
 
 							<!-- IF {CONTACT_VAL} == val -->

@@ -3,11 +3,7 @@
 
 <!-- BEGIN: DETAILS -->
 <h2>
-    <!-- IF {ADMIN_EXTENSIONS_ICO} -->
-    <img src="{ADMIN_EXTENSIONS_ICO}" />
-    <!-- ELSE -->
-    <img src="{PHP.cfg.system_dir}/admin/img/plugins32.png" />
-    <!-- ENDIF -->{ADMIN_EXTENSIONS_TYPE} {ADMIN_EXTENSIONS_NAME}:
+    {ADMIN_EXTENSIONS_ICON} {ADMIN_EXTENSIONS_TYPE} {ADMIN_EXTENSIONS_NAME}:
 </h2>
 
 <div class="row">
@@ -37,6 +33,12 @@
                         <td>{PHP.L.Date}:</td>
                         <td>{ADMIN_EXTENSIONS_DATE}</td>
                     </tr>
+                    <!-- IF {ADMIN_EXTENSIONS_CATEGORY_TITLE} AND {ADMIN_EXTENSIONS_CATEGORY} != 'misc-ext' -->
+                    <tr>
+                        <td>{PHP.L.Category}:</td>
+                        <td>{ADMIN_EXTENSIONS_CATEGORY_TITLE}</td>
+                    </tr>
+                    <!-- ENDIF -->
                     <!--//<tr>
                         <td>{PHP.L.adm_defauth_guests}:</td>
                         <td>{ADMIN_EXTENSIONS_ADMRIGHTS_AUTH_GUESTS} ({ADMIN_EXTENSIONS_AUTH_GUESTS})</td>
@@ -106,7 +108,7 @@
                         <span class="fa fa-wrench"></span> {PHP.L.Configuration} ({ADMIN_EXTENSIONS_TOTALCONFIG})</a>
                     <!-- ENDIF -->
                     <a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS}" class="btn btn-info marginbottom10">
-                        <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
+                        <span class="fa fa-users"></span> {PHP.L.Rights}</a>
                     <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT} -->
                     <a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info marginbottom10">
                         <span class="fa fa-sitemap"></span> {PHP.L.Structure}</a>
@@ -179,13 +181,20 @@
                     <!-- END: ROW_ERROR_PART -->
                     <!-- BEGIN: ROW_PART -->
                     <tr class="<!-- IF {PHP.info_file.Status} == 0 -->info<!-- ENDIF --><!-- IF {PHP.info_file.Status} == 3 -->warning<!-- ENDIF -->">
-                        <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_I_1}</td>
                         <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_PART}</td>
                         <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_FILE}</td>
                         <td class="word-break">{ADMIN_EXTENSIONS_DETAILS_ROW_HOOKS}</td>
-                        <td class="text-center">{ADMIN_EXTENSIONS_DETAILS_ROW_ORDER}</td>
-                        <td class="">{ADMIN_EXTENSIONS_DETAILS_ROW_STATUS}</td>
-                        <td class="">
+                        <td class="text-center">
+                            <!-- IF {ADMIN_EXTENSIONS_DETAILS_ROW_ORDER_INSTALLED} != '' AND {ADMIN_EXTENSIONS_DETAILS_ROW_ORDER_INSTALLED} != {ADMIN_EXTENSIONS_DETAILS_ROW_ORDER} -->
+                            <span class="text-danger">{ADMIN_EXTENSIONS_DETAILS_ROW_ORDER_INSTALLED}</span> /
+                            <span class="text-success">{ADMIN_EXTENSIONS_DETAILS_ROW_ORDER}</span>
+                            <!-- ELSE -->
+                            {ADMIN_EXTENSIONS_DETAILS_ROW_ORDER}
+                            <!-- ENDIF -->
+                        </td>
+                        <td>{ADMIN_EXTENSIONS_DETAILS_ROW_STATUS}</td>
+                        <td>
                             <!-- BEGIN: ROW_PART_NOTINSTALLED -->
                             &ndash;
                             <!-- END: ROW_PART_NOTINSTALLED -->
@@ -241,23 +250,25 @@
 <!-- END: DETAILS -->
 
 <!-- BEGIN: HOOKS -->
-	<h2>{PHP.L.Hooks} ({ADMIN_EXTENSIONS_CNT_HOOK}):</h2>
-	<table class="cells">
-		<tr>
-			<td class="coltop width40">{PHP.L.Hooks}</td>
-			<td class="coltop width20">{PHP.L.Plugin}</td>
-			<td class="coltop width20">{PHP.L.Order}</td>
-			<td class="coltop width20">{PHP.L.Active}</td>
-		</tr>
+<h2>{PHP.L.Hooks} ({ADMIN_EXTENSIONS_CNT_HOOK}):</h2>
+<table>
+    <thead>
+        <tr>
+            <th class="coltop width40">{PHP.L.Hooks}</th>
+            <th class="coltop width20">{PHP.L.Plugin}</th>
+            <th class="coltop width20">{PHP.L.Order}</th>
+            <th class="coltop width20">{PHP.L.Active}</th>
+        </tr>
+    </thead>
 <!-- BEGIN: HOOKS_ROW -->
-		<tr>
-			<td>{ADMIN_EXTENSIONS_HOOK}</td>
-			<td>{ADMIN_EXTENSIONS_CODE}</td>
-			<td class="centerall">{ADMIN_EXTENSIONS_ORDER}</td>
-			<td class="centerall">{ADMIN_EXTENSIONS_ACTIVE}</td>
-		</tr>
+    <tr>
+        <td>{ADMIN_EXTENSIONS_HOOK}</td>
+        <td>{ADMIN_EXTENSIONS_CODE}</td>
+        <td class="centerall">{ADMIN_EXTENSIONS_ORDER}</td>
+        <td class="centerall">{ADMIN_EXTENSIONS_ACTIVE}</td>
+    </tr>
 <!-- END: HOOKS_ROW -->
-	</table>
+</table>
 <!-- END: HOOKS -->
 
 <!-- BEGIN: DEFAULT -->
@@ -306,17 +317,15 @@
             <!-- END: ROW_ERROR_EXT -->
 			<tr class="{ADMIN_EXTENSIONS_ODDEVEN}">
 				<td>
-					<!-- IF {ADMIN_EXTENSIONS_ICO} -->
-					<img src="{ADMIN_EXTENSIONS_ICO}" />
-					<!-- ELSE -->
-					<img src="{PHP.cfg.system_dir}/admin/img/plugins32.png" />
-					<!-- ENDIF -->
+                    <figure>{ADMIN_EXTENSIONS_ICON}</figure>
 				</td>
 				<td>
 					<a href="{ADMIN_EXTENSIONS_DETAILS_URL}"><strong>{ADMIN_EXTENSIONS_NAME}</strong></a>
+                    <!-- IF {ADMIN_EXTENSIONS_DESCRIPTION} -->
 					<p class="help-block">{ADMIN_EXTENSIONS_DESCRIPTION|cot_string_truncate($this,150,1,0,'...')}</p>
+                    <!-- ENDIF -->
 				</td>
-				<td class="">{ADMIN_EXTENSIONS_CODE_X}</td>
+				<td>{ADMIN_EXTENSIONS_CODE_X}</td>
 				<td class="centerall">
 					<!-- IF {PHP.part_status} != 3 AND {ADMIN_EXTENSIONS_VERSION_COMPARE} > 0 -->
 					<span class="text-danger">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span> / <span class="text-success">{ADMIN_EXTENSIONS_VERSION}</span>
@@ -325,25 +334,31 @@
 					<!-- ENDIF -->
 				</td>
 				<td class="text-center">{ADMIN_EXTENSIONS_PARTSCOUNT}</td>
-				<td class="centerall">{ADMIN_EXTENSIONS_STATUS}</td>
+				<td class="centerall">
+                    <!-- IF {PHP.part_status} == 1 -->
+                    <span class="text-success">{ADMIN_EXTENSIONS_STATUS}</span>
+                    <!-- ELSE -->
+                    {ADMIN_EXTENSIONS_STATUS}
+                    <!-- ENDIF -->
+                </td>
 				<td class="action">
                     <!-- IF {ADMIN_EXTENSIONS_TOTALCONFIG} -->
 					<a title="{PHP.L.Configuration}" href="{ADMIN_EXTENSIONS_EDIT_URL}" class="btn btn-info btn-sm marginbottom10">
-                        <span class="fa fa-wrench"></span> {PHP.L.short_config}</a>
+                        <span class="fa fa-wrench"></span> {PHP.L.Config}</a>
                     <!-- ENDIF -->
-                    <!-- IF {PHP.ifstruct} -->
+                    <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT} -->
 					<a title="{PHP.L.Structure}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_STRUCT}" class="btn btn-info btn-sm marginbottom10">
-                        <span class="fa fa-sitemap"></span> {PHP.L.short_struct}</a>
+                        <span class="fa fa-sitemap"></span> {PHP.L.Structure}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.totalinstalled} -->
 					<a title="{PHP.L.Rights}" href="{ADMIN_EXTENSIONS_RIGHTS_URL}" class="btn btn-info btn-sm marginbottom10">
-                        <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
+                        <span class="fa fa-users"></span> {PHP.L.Rights}</a>
                     <!-- ENDIF -->
                     <!-- IF {PHP.ifthistools} -->
 					<a title="{PHP.L.Administration}" href="{ADMIN_EXTENSIONS_JUMPTO_URL_TOOLS}" class="btn btn-success btn-sm marginbottom10">
-                        <span class="fa fa-cogs"></span> {PHP.L.short_admin}</a>
+                        <span class="fa fa-cogs"></span> {PHP.L.cpanel_AdminShort}</a>
                     <!-- ENDIF -->
-                    <!-- IF {PHP.if_plg_standalone} -->
+                    <!-- IF {ADMIN_EXTENSIONS_JUMPTO_URL} -->
 					<a title="{PHP.L.Open}" href="{ADMIN_EXTENSIONS_JUMPTO_URL}" class="btn btn-success btn-sm marginbottom10">
                         <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
                     <!-- ENDIF -->

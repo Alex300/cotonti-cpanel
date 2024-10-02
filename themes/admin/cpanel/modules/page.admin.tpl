@@ -14,27 +14,28 @@
 		<h4 class="panel-title">{PHP.L.Pages} ({ADMIN_PAGE_TOTALDBPAGES})</h4>
 	</div>
 	<div class="panel-body">
-
+		<!-- IF {ADMIN_PAGE_TOTALDBPAGES} -->
 		<div class="button-toolbar block">
-			<form name="form_valqueue" method="get" action="{PHP|cot_url('admin', 'm=page')}">
+			<form name="form_valqueue" method="GET" action="{PHP|cot_url('admin', 'm=page')}">
 				<!-- IF !{PHP|cot_plugin_active('urleditor')} OR {PHP.cfg.plugin.urleditor.preset} != 'handy' -->
 				<input type="hidden" name="m" value="page" />
 				<!-- ENDIF -->
 				<div class="form-inline">
-					<!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->
 					<div class="form-group">
+						<label>{PHP.L.Show}:</label> {ADMIN_PAGE_FILTER}
+					</div>
+
+					<!-- IF {TOTAL_ENTRIES} > 1 -->
+					<div class="form-group marginleft10">
 						<label>{PHP.L.adm_sort}</label> {ADMIN_PAGE_ORDER} {ADMIN_PAGE_WAY}
 					</div>
 					<!-- ENDIF -->
-					<div class="form-group marginleft10">
-						<label>{PHP.L.Show}:</label> {ADMIN_PAGE_FILTER}
-					</div>
 
 					<button type="submit" class="btn btn-default"><span class="fa fa-filter"></span> {PHP.L.Filter}</button>
 				</div>
 			</form>
 		</div>
-
+		<!-- ENDIF -->
 		<form id="form_valqueue" name="form_valqueue" method="post" action="{ADMIN_PAGE_FORM_URL}">
 			<table class="table margintop20">
 				<thead>
@@ -45,8 +46,9 @@
 							<!-- ENDIF -->
 						</th>
 						<th class="width5">{PHP.L.Id}</th>
+						<th class="width10">{PHP.L.Status}</th>
 						<th class="">{PHP.L.Title}</th>
-						<th class=" width20">{PHP.L.Action}</th>
+						<th class="width20">{PHP.L.Action}</th>
 					</tr>
 				<thead>
 				<!-- BEGIN: PAGE_ROW -->
@@ -57,34 +59,34 @@
 					<td class="centerall {ADMIN_PAGE_ODDEVEN}">
 						{ADMIN_PAGE_ID}
 					</td>
+					<td>
+						<!-- IF {ADMIN_PAGE_STATUS} === 'published' -->
+						<span class="text-success">{ADMIN_PAGE_LOCAL_STATUS}</span>
+						<!-- ELSE -->
+						{ADMIN_PAGE_LOCAL_STATUS}
+						<!-- ENDIF -->
+					</td>
 					<td class="{ADMIN_PAGE_ODDEVEN}">
-						<div id="mor_{PHP.ii}" class='mor_info_on_off'>
+						<div id="mor_{PHP.ii}" class="mor_info_on_off" style="max-width: 955px; overflow-x: scroll">
 							<span class="strong" style="cursor:pointer;">{ADMIN_PAGE_TITLE} <span class="caret"></span></span>
+							<!-- IF {ADMIN_PAGE_DESCRIPTION} -->
+							<div>{ADMIN_PAGE_DESCRIPTION}</div>
+							<!-- ENDIF -->
 							<div class="moreinfo">
 								<hr class="margintop10 marginbottom10" />
-								<table class="table-flat">
-									<tr>
-										<td class="width10">{PHP.L.Category}:</td>
-										<td>{ADMIN_PAGE_CAT_PATH_SHORT}</td>
-									</tr>
-									<!-- IF {ADMIN_PAGE_DESCRIPTION} -->
-									<tr>
-										<td>{PHP.L.Description}:</td>
-										<td>{ADMIN_PAGE_DESCRIPTION}</td>
-									</tr>
-									<!-- ENDIF -->
-									<!-- IF {ADMIN_PAGE_TEXT} -->
-									<tr>
-										<td>{PHP.L.Text}:</td>
-										<td>{ADMIN_PAGE_TEXT}</td>
-									</tr>
-									<!-- ENDIF -->
-								</table>
+
+								<strong>{PHP.L.Category}:</strong> {ADMIN_PAGE_CAT_PATH_SHORT}
+								<!-- IF {ADMIN_PAGE_TEXT} -->
+								<div class="margintop10">
+									<strong>{PHP.L.Text}:</strong>
+									<div>{ADMIN_PAGE_TEXT}</div>
+								</div>
+								<!-- ENDIF -->
 							</div>
 						</div>
 					</td>
 					<td class="action {ADMIN_PAGE_ODDEVEN}">
-						<!-- IF 1 OR {PHP.row.page_state} == 1 -->
+						<!-- IF {PHP.row.page_state} == 1 -->
 						<a href="{ADMIN_PAGE_URL_FOR_VALIDATED}" class="confirmLink btn btn-info" title="{PHP.L.Validate}"
 								data-toggle="tooltip"><span class="fa fa-check-circle-o"></span> {PHP.L.Validate}</a>
 						<!-- ENDIF -->
@@ -99,14 +101,13 @@
 					</td>
 				</tr>
 				<!-- END: PAGE_ROW -->
-				<!-- IF {PHP.is_row_empty} -->
+				<!-- IF !{TOTAL_ENTRIES} -->
 				<tr>
-					<td class="text-center" colspan="4"><h4 class="help-block">{PHP.L.None}</h4></td>
+					<td class="text-center" colspan="5"><h4 class="help-block">{PHP.L.None}</h4></td>
 				</tr>
-				<!-- ENDIF -->
-				<!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->
+				<!-- ELSE -->
 				<tr>
-					<td colspan="4">
+					<td colspan="5">
 						<!-- IF {PHP.filter} != {PHP.L.adm_validated} -->
 						<button name="paction" type="submit" value="validate" class="btn btn-info confirm">
 							<span class="fa fa-check-circle-o"></span> {PHP.L.Validate}</button>
@@ -120,14 +121,14 @@
 			</table>
 		</form>
 
-		<!-- IF {ADMIN_PAGE_PAGNAV} -->
+		<!-- IF {TOTAL_ENTRIES} -->
 		<div class="text-right">
 			<nav>
 				<ul class="pagination" style="margin-bottom: 0">
-					{ADMIN_PAGE_PAGINATION_PREV}{ADMIN_PAGE_PAGNAV}{ADMIN_PAGE_PAGINATION_NEXT}
+					{PREVIOUS_PAGE}{PAGINATION}{NEXT_PAGE}
 				</ul>
 			</nav>
-			<span class="help-block">{PHP.L.Total}: {ADMIN_PAGE_TOTALITEMS}, {PHP.L.Onpage}: {ADMIN_PAGE_ON_PAGE}</span>
+			<span class="help-block">{PHP.L.Total}: {TOTAL_ENTRIES}, {PHP.L.Onpage}: {ENTRIES_ON_CURRENT_PAGE}</span>
 		</div>
 		<!-- ENDIF -->
 	</div>
@@ -150,7 +151,7 @@
 			}
 
 			let message = 'Are you sure?';
-			switch(this.value) {
+			switch (this.value) {
 				case 'delete':
 					message = '{PHP.L.page_confirm_delete}';
 					break;

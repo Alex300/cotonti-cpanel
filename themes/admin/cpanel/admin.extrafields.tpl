@@ -7,11 +7,7 @@
         <table class="table table-hover">
             <!-- BEGIN: ROW -->
             <tr class="{ADMIN_EXTRAFIELDS_ODDEVEN}">
-                <td class="width5">
-                    <!-- IF {ADMIN_EXTRAFIELDS_ROW_ICO} -->
-                    <img src="{ADMIN_EXTRAFIELDS_ROW_ICO}" />
-                    <!-- ENDIF -->
-                </td>
+                <td class="width5"><figure>{ADMIN_EXTRAFIELDS_ROW_ICON}</figure></td>
                 <td>
                     <a href="{ADMIN_EXTRAFIELDS_ROW_TABLEURL}">{ADMIN_EXTRAFIELDS_ROW_TABLENAME}</a>
                 </td>

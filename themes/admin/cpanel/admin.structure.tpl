@@ -5,15 +5,14 @@
     </div>
     <div class="panel-body">
         <!-- BEGIN: ADMIN_STRUCTURE_EXT -->
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 margintop10 marginbottom10">
-            <a href="{ADMIN_STRUCTURE_EXT_URL}" class="thumbicons">
-                <!-- IF {ADMIN_STRUCTURE_EXT_ICO} -->
-                <img src="{ADMIN_STRUCTURE_EXT_ICO}"/>
-                <!-- ELSE -->
-                <img src="{PHP.cfg.system_dir}/admin/img/plugins32.png"/>
-                <!-- ENDIF -->
-                {ADMIN_STRUCTURE_EXT_NAME}
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 margintop10 marginbottom10" style="display: flex; gap: 10px;">
+            <a href="{ADMIN_STRUCTURE_EXT_URL}">
+                {ADMIN_STRUCTURE_EXT_ICON}
             </a>
+            <div>
+                <a href="{ADMIN_STRUCTURE_EXT_URL}"><strong>{ADMIN_STRUCTURE_EXT_NAME}</strong></a>
+                <!-- IF {ADMIN_STRUCTURE_EXT_DESC} --><p>{ADMIN_STRUCTURE_EXT_DESC}</p><!-- ENDIF -->
+            </div>
         </div>
         <!-- END: ADMIN_STRUCTURE_EXT -->
         <!-- BEGIN: ADMIN_STRUCTURE_EMPTY -->
@@ -37,7 +36,7 @@
 
 <!-- BEGIN: OPTIONS -->
 <div class="margintop20">
-    <form name="savestructure" id="savestructure" action="{ADMIN_STRUCTURE_UPDATE_FORM_URL}" method="post"
+    <form name="savestructure" id="savestructure" action="{ADMIN_STRUCTURE_UPDATE_FORM_URL}" method="POST"
           enctype="multipart/form-data" class="form-horizontal">
 
         <div class="row">
@@ -72,7 +71,7 @@
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">{PHP.L.Locked}:</label>
-                            <div class="col-sm-10"><div class="checkbox">{ADMIN_STRUCTURE_LOCKED}</div></div>
+                            <div class="col-sm-10">{ADMIN_STRUCTURE_LOCKED}</div>
                         </div>
 
                         <div class="form-group">
@@ -123,7 +122,10 @@
                                 <!-- ENDIF -->
                             </div>
                             <div class="col-sm-2">
-                                <a href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}" class="ajax button">{PHP.L.Reset}</a>
+                                <a
+                                    href="{ADMIN_CONFIG_ROW_CONFIG_MORE_URL}"
+                                    class="ajax btn btn-info btn-sm"
+                                ><i class="fa fa-refresh" aria-hidden="true"></i> {PHP.L.Reset}</a>
                             </div>
                         </div>
                         <!-- END: ADMIN_CONFIG_ROW_OPTION -->
@@ -163,27 +165,27 @@
                 <td>{ADMIN_STRUCTURE_SPACEIMG}{ADMIN_STRUCTURE_PATH}</td>
                 <td class="text-center">{ADMIN_STRUCTURE_CODE}</td>
                 <td>{ADMIN_STRUCTURE_TITLE}</td>
-                <td class="text-center">{ADMIN_STRUCTURE_TPLQUICK}</td>
+                <td class="text-center">{ADMIN_STRUCTURE_TPL_CODE}</td>
                 <td class="text-center">{ADMIN_STRUCTURE_COUNT}</td>
                 <td>
                     <a title="{PHP.L.Options}" href="{ADMIN_STRUCTURE_OPTIONS_URL}" class="ajax btn btn-info btn-sm"
-                            data-toggle="tooltip"><span class="fa fa-wrench"></span> {PHP.L.short_config}</a>
+                            data-toggle="tooltip"><span class="fa fa-wrench"></span> {PHP.L.Config}</a>
                     <!-- IF {ADMIN_STRUCTURE_RIGHTS_URL} -->
                     <a title="{PHP.L.Rights}" href="{ADMIN_STRUCTURE_RIGHTS_URL}" class="btn btn-info btn-sm"><span class="fa fa-users"></span>
-                        {PHP.L.short_rights}</a>
+                        {PHP.L.Rights}</a>
                     <!-- ENDIF -->
                     <!-- IF {ADMIN_STRUCTURE_CAN_DELETE} -->
                     <a title="{PHP.L.Delete}" href="{ADMIN_STRUCTURE_UPDATE_DEL_URL}" class="confirmLink btn btn-danger
-                        btn-sm"><span class="fa fa-trash-o"></span> {PHP.L.short_delete}</a>
+                        btn-sm"><span class="fa fa-trash-o"></span> {PHP.L.Delete}</a>
                     <!-- ENDIF -->
                     <a href="{ADMIN_STRUCTURE_JUMPTO_URL}" title="{PHP.L.Pages}" class="button btn btn-success btn-sm">
-                        <span class="fa fa-folder-open"></span> {PHP.L.short_open}</a>
+                        <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
                 </td>
             </tr>
             <!-- END: ROW -->
             <tr>
                 <td colspan="8">
-                    <button type="submit" class="btn btn-primary">{PHP.L.Update}</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> {PHP.L.Update}</button>
                 </td>
             </tr>
         </table>
@@ -217,7 +219,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="addstructureModalLabel">{PHP.L.Add}</h4>
             </div>
-            <form name="addstructure" id="addstructure" action="{ADMIN_STRUCTURE_URL_FORM_ADD}" method="post"
+            <form name="addstructure" id="addstructure" action="{ADMIN_STRUCTURE_URL_FORM_ADD}" method="POST"
                   class="ajax form-horizontal" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group {PHP|cot_formGroupClass('rstructurepath')}">
@@ -256,9 +258,7 @@
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{PHP.L.Locked}</label>
-                        <div class="col-sm-10">
-                            <div class="checkbox">{ADMIN_STRUCTURE_LOCKED}</div>
-                        </div>
+                        <div class="col-sm-10">{ADMIN_STRUCTURE_LOCKED}</div>
                     </div>
                     <!-- IF {ADMIN_STRUCTURE_TPL} -->
                     <div class="form-group form-inline">

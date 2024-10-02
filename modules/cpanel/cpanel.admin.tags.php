@@ -11,7 +11,7 @@ Tags=admin.tpl:{ADMIN_BREADCRUMBS},{ADMIN_TITLE},{ADMIN_SUBTITLE}
  * @package Cotonti
  * @subpackage  Admin
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
+ * @copyright © Lily Software https://lily-software.com
  */
 defined('COT_CODE') or die('Wrong URL');
 
@@ -30,9 +30,9 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
 //    }
 
     // Extensions can use $adminsubtitle only
-    if (empty($adminTitle) && !empty($adminsubtitle)) {
-        $adminTitle = $adminsubtitle;
-        $adminsubtitle = '';
+    if (empty($adminTitle) && !empty($adminSubtitle)) {
+        $adminTitle = $adminSubtitle;
+        $adminSubtitle = '';
     }
 
     if (empty($adminTitle) && !empty($m) && !empty($cot_modules[$m])) {
@@ -41,20 +41,20 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
     if (empty($adminTitle) && !empty($m) && $m == 'other' && !empty($p) && !empty($cot_plugins_enabled[$p])) {
         $adminTitle = $cot_plugins_enabled[$p][$m]['title'];
     }
-    $adminsubtitle = (!empty($adminsubtitle)) ? $adminsubtitle : '';
+    $adminSubtitle = (!empty($adminSubtitle)) ? $adminSubtitle : '';
 
-    if ($adminsubtitle == $adminTitle) {
-        $adminsubtitle = '';
+    if ($adminSubtitle == $adminTitle) {
+        $adminSubtitle = '';
     }
 
-    $title_params = array(
+    $title_params = [
         'ADMIN' => Cot::$L['Administration'],
-        'TITLE' => $adminTitle
-    );
+        'TITLE' => $adminTitle,
+    ];
     $out['subtitle'] = empty($adminTitle) ?
         cot_title('{ADMIN}', $title_params) : cot_title('{TITLE} - {ADMIN}', $adminTitle);
 
-    $crumbs = cot_breadcrumbs($adminpath, false, true);
+    $crumbs = cot_breadcrumbs($adminPath, false, true);
 
     // Standart admin pages
     if (
@@ -84,7 +84,7 @@ if (!empty(Cot::$cfg['admintheme']) && Cot::$cfg['admintheme'] == 'cpanel') {
     $t->assign([
         'ADMIN_BREADCRUMBS' => $crumbs,
         'ADMIN_TITLE' => htmlspecialchars($adminTitle),
-        'ADMIN_SUBTITLE' => $adminsubtitle,
+        'ADMIN_SUBTITLE' => $adminSubtitle,
         'ADMIN_PANEL' => CPanel::$useDefaultPanel ? 1 : 0,
         'ADMIN_PANEL_TITLE' => !empty(CPanel::$panelTitle) ?
             htmlspecialchars(CPanel::$panelTitle) : htmlspecialchars($adminTitle),

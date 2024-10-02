@@ -8,35 +8,37 @@ Hooks=admin.rightsbyitem.tags
  * Cpanel Module
  *
  * @package Cotonti
- * @subpackage  Admin
+ * @subpackage Admin
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
+ * @copyright © Lily Software https://lily-software.com
  */
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
 global $cot_groups, $cot_modules;
 
-$admintitle = !empty($adminsubtitle) ? $adminsubtitle: Cot::$L['Rights'];
-$adminsubtitle = '';
-if(!empty($g) && !empty($cot_groups[$g])) {
-    $adminsubtitle = $cot_groups[$g]['name'];
+$adminTitle = !empty($adminSubtitle) ? $adminSubtitle: Cot::$L['Rights'];
+$adminSubtitle = '';
+if (!empty($g) && !empty($cot_groups[$g])) {
+    $adminSubtitle = $cot_groups[$g]['name'];
 }
 
-if($ic == 'message' || $ic == 'admin') {
-    $adminsubtitle =  Cot::$L['adm_code'][$ic];
+if ($ic == 'message' || $ic == 'admin') {
+    $adminSubtitle =  Cot::$L['adm_code'][$ic];
 
-} elseif($ic == 'plug')  {
-    if(isset($cot_plugins_enabled[$io])) $adminsubtitle = $cot_plugins_enabled[$io]['title'];
+} elseif ($ic == 'plug')  {
+    if (isset($cot_plugins_enabled[$io])) {
+        $adminSubtitle = $cot_plugins_enabled[$io]['title'];
+    }
 
-} elseif($ic == 'structure') {
-    $adminsubtitle = Cot::$L['Structure'];
+} elseif ($ic == 'structure') {
+    $adminSubtitle = Cot::$L['Structure'];
 
 } else {
-    if(isset($io) && $io != 'a' && isset(Cot::$structure[$ic][$io])) {
-        $adminsubtitle = Cot::$structure[$ic][$io]['title'];
+    if (isset($io) && $io != 'a' && isset(Cot::$structure[$ic][$io])) {
+        $adminSubtitle = Cot::$structure[$ic][$io]['title'];
 
-    } elseif(isset($cot_modules[$ic])) {
-        $adminsubtitle = $cot_modules[$ic]['title'];
+    } elseif (isset($cot_modules[$ic])) {
+        $adminSubtitle = $cot_modules[$ic]['title'];
     }
 }
 

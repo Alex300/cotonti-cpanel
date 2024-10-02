@@ -201,32 +201,31 @@ if (
         ),
     );
 
-    CPanel::$menu['user'] = array(
-        'my_page' => array(
-            'title' => 'My page',
+    CPanel::$menu['user'] = [
+        'my_page' => [
+            'title' => Cot::$L['users_myProfile'],
             'url' => cot_url('users', 'm=details'),
             'icon_class' => 'fa fa-user',
-        ),
-        'profile' => array(
-            'title' => Cot::$L['Profile'],
+        ],
+        'profile' => [
+            'title' => Cot::$L['users_profileSettings'],
             'url' => cot_url('users', 'm=profile'),
             'icon_class' => 'fa fa-cog',
-        ),
-    );
+        ],
+    ];
 
-    if(cot_module_active('pfs')){
-        $admin_MenuUser['pfs'] = array(
+    if (cot_module_active('pfs')) {
+        $admin_MenuUser['pfs'] = [
             'title' => Cot::$L['PFS'],
             'url' => cot_url('pfs'),
             'icon_class' => 'fa fa-folder-open',
-        );
-
-    } elseif(cot_module_active('files')) {
+        ];
+    } elseif (cot_module_active('files')) {
         // todo files module must add this item itself
-        $admin_MenuUser['pfs'] = array(
+        $admin_MenuUser['pfs'] = [
             'title' => Cot::$L['PFS'],
             'url' => cot_url('files', 'm=pfs'),
             'icon_class' => 'fa fa-folder-open',
-        );
+        ];
     }
 }

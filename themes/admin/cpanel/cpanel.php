@@ -2,11 +2,9 @@
 /**
  * Cpanel Admin Theme
  *
- * @package Cotonti
- * @subpackage  Admin
- *
- * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Lily Software https://lily-software.com (ex. Portal30 Studio)
+ * @package Cpanel
+ * @author Alexey Kalnov <kalnovalexey@yandex.ru>
+ * @copyright © Lily Software https://lily-software.com
  */
 defined('COT_CODE') or die('Wrong URL.');
 

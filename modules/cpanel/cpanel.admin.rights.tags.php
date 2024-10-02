@@ -8,16 +8,16 @@ Hooks=admin.rights.tags
  * Cpanel Module
  *
  * @package Cotonti
- * @subpackage  Admin
- * @author Alex - Studio Portal30
- * @copyright Portal30 http://portal30.ru
+ * @subpackage Admin
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright © Lily Software https://lily-software.com
  */
 (defined('COT_CODE') && defined('COT_ADMIN')) or die('Wrong URL.');
 
 global $cot_groups;
 
-$admintitle = !empty($adminsubtitle) ? $adminsubtitle: Cot::$L['Rights'];
-$adminsubtitle = '';
-if(!empty($g) && !empty($cot_groups[$g])) {
-    $adminsubtitle = $cot_groups[$g]['name'];
+$adminTitle = !empty($adminSubtitle) ? $adminSubtitle : Cot::$L['Rights'];
+$adminSubtitle = '';
+if (!empty($g) && !empty($cot_groups[$g])) {
+    $adminSubtitle = $cot_groups[$g]['name'];
 }

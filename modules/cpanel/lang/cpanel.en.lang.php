@@ -1,11 +1,11 @@
 <?php
 /**
  * Cpanel Module
- * Russian language file
+ * English language file
  *
  * @package Cpanel
  * @author Alexey Kalnov <kalnovalexey@yandex.ru>
  * @copyright © Lily Software https://lily-software.com
  */
 
-$L['cpanel_AdminShort'] = 'Админ.';
+$L['cpanel_AdminShort'] = 'Admin.';

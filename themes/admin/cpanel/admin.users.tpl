@@ -40,10 +40,10 @@
                 <td>
                     <!-- IF !{ADMIN_USERS_ROW_GRP_SKIPRIGHTS} -->
                     <a title="{PHP.L.Rights}" href="{ADMIN_USERS_ROW_GRP_RIGHTS_URL}" class="btn btn-info btn-sm">
-                        <span class="fa fa-users"></span> {PHP.L.short_rights}</a>
+                        <span class="fa fa-users"></span> {PHP.L.Rights}</a>
                     <!-- ENDIF -->
                     <a title="{PHP.L.Open}" href="{ADMIN_USERS_ROW_GRP_JUMPTO_URL}" class="btn btn-success btn-sm">
-                        <span class="fa fa-folder-open"></span> {PHP.L.short_open}</a>
+                        <span class="fa fa-folder-open"></span> {PHP.L.Open}</a>
                 </td>
                 <td class="text-center">{ADMIN_USERS_ROW_GRP_ID}</td>
             </tr>

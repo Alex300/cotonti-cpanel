@@ -9,10 +9,9 @@ Order=50
 /**
  * Cpanel Module
  *
- * @package Cotonti
- * @subpackage  Admin
- * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright © Portal30 Studio http://portal30.ru
+ * @package Cpanel
+ * @author Alexey Kalnov <kalnovalexey@yandex.ru>
+ * @copyright © Lily Software https://lily-software.com
  */
 defined('COT_CODE') or die('Wrong URL');
 
@@ -26,7 +25,7 @@ if (
     $user_avatar = cot_rc('user_default_avatar');
     if (cot_module_active('files')) {
         require_once cot_incfile('files', 'module');
-        $user_avatar = cot_files_user_avatar(Cot::$usr['profile']['user_avatar'], Cot::$usr['profile']['user_avatar']);
+        $user_avatar = cot_filesUserAvatar(Cot::$usr['profile']['user_avatar'], Cot::$usr['profile']['user_avatar']);
 
     } elseif (cot_plugin_active('userimages')) {
         require_once cot_incfile('userimages', 'plug');
